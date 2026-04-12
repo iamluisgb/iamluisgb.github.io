@@ -1,363 +1,230 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Luis Gonzalez</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luis González — SRE | AI Builder</title>
+  <meta name="description" content="SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.">
+  <meta name="author" content="Luis González">
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Luis González — SRE | AI Builder">
+  <meta property="og:description" content="SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.">
+  <meta property="og:image" content="https://luisgonzalezbernal.com/images/about.jpg">
+  <meta property="og:url" content="https://luisgonzalezbernal.com">
+  <meta property="og:type" content="website">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Luis González — SRE | AI Builder">
+  <meta name="twitter:description" content="SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.">
+  <meta name="twitter:image" content="https://luisgonzalezbernal.com/images/about.jpg">
+  <meta name="twitter:site" content="@iamluisgb">
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deep: '#10141a',
+            'surface-low': '#1c2026',
+            'surface-mid': '#262a31',
+            'surface-high': '#31353c',
+            'surface-bright': '#353940',
+            electric: '#00ff9d',
+            'electric-dim': '#00e38b',
+            cyber: '#306998',
+            'cyber-light': '#97cbff',
+            'on-bg': '#dfe2eb',
+            'on-surface': '#b9cbbc',
+            'outline-v': '#3b4a3f',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            grotesk: ['Space Grotesk', 'sans-serif'],
+          },
+          borderRadius: {
+            sm: '0.125rem',
+            md: '0.375rem',
+          },
+        },
+      },
+    }
+  </script>
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/about.jpg);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Luis González</a></h1>
-				<span class="position">SRE | DevOps | CI/CD | Automation</span>
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						
-						<li><a href="#" data-nav-section="about">About me</a></li>
-						<li><a href="#" data-nav-section="skills">Skills</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-					</ul>
-				</div>
-			</nav>
+  <style>
+    body {
+      background-color: #10141a;
+      background-image: radial-gradient(rgba(53, 57, 64, 0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
 
-			<div class="colorlib-footer">
-				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-				</ul>
-			</div>
+    .glass-panel {
+      background: rgba(49, 53, 60, 0.4);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
 
-		</aside>
+    .link-card {
+      background: #1c2026;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .link-card:hover {
+      background: #262a31;
+      transform: translateY(-1px);
+    }
 
-		<div id="colorlib-main">
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-						</div>
-					</div>
-				</div>
-			</section>
+    .glow-hover:hover {
+      filter: drop-shadow(0 0 8px rgba(0, 255, 157, 0.4));
+    }
 
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<h2 class="colorlib-heading">About me</h2>
-										<p><strong>Hi! I am Luis González</strong> Site Reliability Engineer with a background 
-											in Backend Development with Python. Experience in automation with Rundeck, 
-											Ansible and Jenkins, creation of CI/CD pipelines and deployment in Kubernetes. 
-											I like working within agile teams and collaborating with others to find innovative solutions.</p>
-										<p></p>
-									</div>
-								</div>
-							</div>
-							
-							
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<h2 class="colorlib-heading animate-box">Skills</h2>
-						</div>
-					</div>
-					<div class="row">
+    .chip {
+      background: #262a31;
+      transition: background 0.2s ease;
+    }
+    .chip:hover {
+      background: #31353c;
+    }
 
-						<div class="col-md-12">
-							<h4> CI/CD | Jenkins | Ansible | Docker | Kubernetes | Rundeck </h4>
-							<h4> Git | Github | Gitlab | Bitbucket |  Gitflow | Trunk Based Development </h4>
-							<h4> Python | Django | Django Rest Framework | Numpy | Pandas </h4> 
-							<h4> R | Shiny | Plotly | JavaScript | MySQL | PostgreSQL </h4>
-							<h4> Cloud Computing | AWS| Linux | Backend | Full-Stack | English, Spanish</h4>
-	 
-						</div>
-					</div>
-				</div>
-			</section>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+  </style>
+</head>
+<body class="font-inter text-on-bg min-h-screen flex flex-col items-center">
 
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<h2 class="colorlib-heading animate-box">Experience</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
+  <main class="w-full max-w-[480px] mx-auto px-6 py-12 flex flex-col gap-10">
 
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
+    <!-- HERO -->
+    <section class="flex flex-col items-center text-center gap-4 animate-in">
+      <div class="w-24 h-24 rounded-md overflow-hidden" style="border-radius: 0.375rem;">
+        <img src="images/about.jpg" alt="Luis González" class="w-full h-full object-cover">
+      </div>
+      <div>
+        <h1 class="text-2xl font-bold tracking-tight">Luis González</h1>
+        <p class="font-mono text-sm text-cyber-light mt-1">SRE que construye con IA</p>
+      </div>
 
-					               <div class="timeline-label">
-					                  <h2><a href="#">SRE | DevOps in Abalia (contractor in Roche)</a> <span>01/2022-Current</span></h2>
-					                		<p>
-											<ul>
-												<li>Managing the Rundeck instance within Roche (the pharmaceutical company) where about 3.000 jobs 
-													are executed daily: Deploying CI/CD pipeline that deploy Rundeck in Kubernetes with Ansible and 
-													Jenkins and improving Rundeck performance within a Kubernetes cluster reaching an SLI of 99.97.</li>
-												<li>Enriched Rundeck by integrating with ServiceNow and Hashicorp Vault by creating custom plugins 
-													using Python and bash.</li>
-												<li>Helping users automate their processes with Rundeck, organizing demo days for users and writing 
-													the guidelines.</li>
-												<li>Designed and developed a  web app development: ticket auto dispatch for Service Now. This application 
-													automatically assigns the most suitable person to resolve each incident from among all those available 
-													on the team, reducing ticket assignment time by 90%. It is a Django dockerize application, with 
-													asynchronous tasks. Technologies used: Python, Django, Javascript, Docker, Nginx, Celery. </li>
-											</ul>
-									  </p>
-					               </div>
-					            </div>
-					         </article>
+      <!-- Social icons -->
+      <div class="flex gap-5 mt-2">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/iamluisgb/" target="_blank" rel="noopener" class="text-on-surface hover:text-electric glow-hover transition-colors" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <!-- X / Twitter -->
+        <a href="https://x.com/iamluisgb" target="_blank" rel="noopener" class="text-on-surface hover:text-electric glow-hover transition-colors" aria-label="X (Twitter)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://instagram.com/iamluisgb" target="_blank" rel="noopener" class="text-on-surface hover:text-electric glow-hover transition-colors" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/iamluisgb" target="_blank" rel="noopener" class="text-on-surface hover:text-electric glow-hover transition-colors" aria-label="GitHub">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </div>
+    </section>
 
+    <!-- PROJECTS -->
+    <section class="flex flex-col gap-3 animate-in delay-1">
+      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1">// Proyectos</h2>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Backend Developer | Data Analyst in HaciendasBio</a> <span>01/2018-12/2021</span></h2>
-					                  <p>
-											<ul>
-													<li>Designed and implemented an ERP in the AWS cloud for the management of the production department 
-														(over 40 daily users). Previously, data was recorded in Excel, this ERP reduced data recording 
-														time by 50%, improving the quality of records. Technologies used: Python, Javascript, Django, 
-														AWS (EC2, RDS, S3, Lambda), Linux, Docker. </li>
-													<li>Developed and  implemented a business intelligence platform to control costs in the production 
-														department. Allowing decisions based on data that reduced the costs of some activities by 20%. 
-														Technologies used: R, SQL, Shiny, Rmarkdown, Plotly.</li>
-													<li>Developed  harvest prediction models for different crops. Improving predictions by 70%. 
-														Technologies used: R.</li>
-												</ul>
-									  </p>
-					               </div>
-					            </div>
-					         </article>
+      <a href="https://iamluisgb.github.io/arete" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="text-electric text-lg">&#9651;</span>
+        <div>
+          <p class="font-semibold text-sm">Areté</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5">Atletismo híbrido — fuerza + resistencia</p>
+        </div>
+        <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
 
-							 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Agricultura Engineer in HaciendasBio</a> <span>01/2016-12/2018</span></h2>
-					                  <p>
-											<ul>
-													<li>Management and planning within the organization of a farm of the different work units. 
-														Managing teams of 50 people. </li>
-												</ul>
-									  </p>
-					               </div>
-					            </div>
-					         </article>
+      <a href="https://fnfanalytics.com" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="text-electric text-lg">&#9672;</span>
+        <div>
+          <p class="font-semibold text-sm">fnfanalytics</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5">ERP para agricultores — ganador A3BT 2020</p>
+        </div>
+        <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </section>
 
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
+    <!-- CONTENT -->
+    <section class="flex flex-col gap-3 animate-in delay-2">
+      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1">// Contenido</h2>
 
-			<section class="colorlib-education" data-section="education">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<h2 class="colorlib-heading animate-box">Education</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingOne">
-									        <h4 class="panel-title">
-									            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Master in Digital Transformation
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									         <div class="panel-body">
-											   <p>University of Córdoba</p>
-											   <p>2018-2019</p>
-									         </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingTwo">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Master in Agronomic Engineering
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									        <div class="panel-body">
-												<p>University of Córdoba</p>
-												<p>2015-2017</p>	
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingThree">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Degree in Agronomic Engineering
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-									        <div class="panel-body">
-												<p>University of Extremadura</p>	
-												<p>2011-2015</p>	
-									        </div>
-									    </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+      <a href="https://www.linkedin.com/in/iamluisgb/recent-activity/all/" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="text-cyber-light text-lg">&#9998;</span>
+        <div>
+          <p class="font-semibold text-sm">Posts en LinkedIn</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5">SRE, IA, observabilidad y reinvención profesional</p>
+        </div>
+        <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
 
-			<section class="colorlib-contact" data-section="contact">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<h2 class="colorlib-heading">Contact</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="#">luisgonzalezb93@gmail.com</a></p>
-								</div>
-							</div>
+      <a href="https://github.com/iamluisgb?tab=repositories" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="text-cyber-light text-lg">&#10094;/&#10095;</span>
+        <div>
+          <p class="font-semibold text-sm">Cursos Python & DevOps</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5">Repos de clases — Python, Django, CI/CD, Docker</p>
+        </div>
+        <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </section>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>Madrid, Spain</p>
-								</div>
-							</div>
+    <!-- TECH STACK -->
+    <section class="animate-in delay-3">
+      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-3">// Stack</h2>
+      <div class="flex flex-wrap gap-2">
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Splunk</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">PagerDuty</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Kubernetes</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Python</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">LangGraph</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Claude Code</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">AWS</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Docker</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">FastAPI</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Ansible</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Rundeck</span>
+        <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Prometheus</span>
+      </div>
+    </section>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-phone"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="tel://">+34 630 25 47 90</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-7 col-md-push-1">
-							
-						</div>
-					</div>
-				</div>
-			</section>
+    <!-- ABOUT -->
+    <section class="glass-panel rounded-sm px-5 py-5 animate-in delay-4">
+      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-3">// Sobre mí</h2>
+      <p class="text-sm leading-relaxed text-on-bg">
+        De ingeniero agrónomo a SRE en Roche. Construyo agentes de IA, gestiono observabilidad a escala y enseño Python y DevOps. Seguidor del CPS de Recuenco. Atleta híbrido — fuerza + carrera como sistema de vida.
+      </p>
+    </section>
 
+    <!-- FOOTER -->
+    <footer class="text-center flex flex-col gap-2 pt-4 animate-in delay-5">
+      <a href="mailto:luisgonzalezb93@gmail.com" class="font-mono text-xs text-cyber-light hover:text-electric transition-colors">luisgonzalezb93@gmail.com</a>
+      <p class="font-mono text-xs text-on-surface">Badajoz, España</p>
+      <p class="font-mono text-[10px] text-on-surface mt-4 opacity-50">v2.0</p>
+    </footer>
 
+  </main>
 
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
-
-	</body>
+</body>
 </html>
-
-
