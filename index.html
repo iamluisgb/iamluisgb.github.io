@@ -21,6 +21,16 @@
   <meta name="twitter:image" content="https://luisgonzalezbernal.com/images/about.jpg">
   <meta name="twitter:site" content="@iamluisgb">
 
+  <!-- Prevent FOUC: apply theme before render -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || (!saved && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,18 +43,18 @@
       theme: {
         extend: {
           colors: {
-            deep: '#10141a',
-            'surface-low': '#1c2026',
-            'surface-mid': '#262a31',
-            'surface-high': '#31353c',
-            'surface-bright': '#353940',
-            electric: '#00ff9d',
-            'electric-dim': '#00e38b',
-            cyber: '#306998',
-            'cyber-light': '#97cbff',
-            'on-bg': '#dfe2eb',
-            'on-surface': '#b9cbbc',
-            'outline-v': '#3b4a3f',
+            deep: 'var(--color-bg)',
+            'surface-low': 'var(--color-surface-low)',
+            'surface-mid': 'var(--color-surface-mid)',
+            'surface-high': 'var(--color-surface-high)',
+            'surface-bright': 'var(--color-surface-bright)',
+            electric: 'var(--color-electric)',
+            'electric-dim': 'var(--color-electric-dim)',
+            cyber: 'var(--color-cyber)',
+            'cyber-light': 'var(--color-cyber-light)',
+            'on-bg': 'var(--color-on-bg)',
+            'on-surface': 'var(--color-on-surface)',
+            'outline-v': 'var(--color-outline-v)',
           },
           fontFamily: {
             inter: ['Inter', 'sans-serif'],
@@ -61,37 +71,87 @@
   </script>
 
   <style>
+    /* --- Dark mode (default) --- */
+    :root {
+      --color-bg: #10141a;
+      --color-surface-low: #1c2026;
+      --color-surface-mid: #262a31;
+      --color-surface-high: #31353c;
+      --color-surface-bright: #353940;
+      --color-electric: #00ff9d;
+      --color-electric-dim: #00e38b;
+      --color-cyber: #306998;
+      --color-cyber-light: #97cbff;
+      --color-on-bg: #dfe2eb;
+      --color-on-surface: #b9cbbc;
+      --color-outline-v: #3b4a3f;
+      --color-dot-grid: rgba(53, 57, 64, 0.05);
+      --color-glass-bg: rgba(49, 53, 60, 0.4);
+      --color-card-bg: #1c2026;
+      --color-card-hover: #262a31;
+      --color-chip-bg: #262a31;
+      --color-chip-hover: #31353c;
+      --color-glow: rgba(0, 255, 157, 0.4);
+    }
+
+    /* --- Light mode --- */
+    :root.light {
+      --color-bg: #f5f5f7;
+      --color-surface-low: #eaeaed;
+      --color-surface-mid: #dddde2;
+      --color-surface-high: #d0d0d7;
+      --color-surface-bright: #c5c5cd;
+      --color-electric: #00c978;
+      --color-electric-dim: #00b36b;
+      --color-cyber: #306998;
+      --color-cyber-light: #1e5080;
+      --color-on-bg: #1a1d24;
+      --color-on-surface: #4a5568;
+      --color-outline-v: #c0d0c5;
+      --color-dot-grid: rgba(0, 0, 0, 0.04);
+      --color-glass-bg: rgba(255, 255, 255, 0.6);
+      --color-card-bg: #ffffff;
+      --color-card-hover: #f0f0f3;
+      --color-chip-bg: #e8e8ed;
+      --color-chip-hover: #dddde2;
+      --color-glow: rgba(0, 201, 120, 0.3);
+    }
+
+    * {
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
     body {
-      background-color: #10141a;
-      background-image: radial-gradient(rgba(53, 57, 64, 0.05) 1px, transparent 1px);
+      background-color: var(--color-bg);
+      background-image: radial-gradient(var(--color-dot-grid) 1px, transparent 1px);
       background-size: 24px 24px;
     }
 
     .glass-panel {
-      background: rgba(49, 53, 60, 0.4);
+      background: var(--color-glass-bg);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
     }
 
     .link-card {
-      background: #1c2026;
+      background: var(--color-card-bg);
       transition: background 0.2s ease, transform 0.15s ease;
     }
     .link-card:hover {
-      background: #262a31;
+      background: var(--color-card-hover);
       transform: translateY(-1px);
     }
 
     .glow-hover:hover {
-      filter: drop-shadow(0 0 8px rgba(0, 255, 157, 0.4));
+      filter: drop-shadow(0 0 8px var(--color-glow));
     }
 
     .chip {
-      background: #262a31;
+      background: var(--color-chip-bg);
       transition: background 0.2s ease;
     }
     .chip:hover {
-      background: #31353c;
+      background: var(--color-chip-hover);
     }
 
     @keyframes fadeIn {
@@ -107,11 +167,48 @@
     .delay-3 { animation-delay: 0.3s; }
     .delay-4 { animation-delay: 0.4s; }
     .delay-5 { animation-delay: 0.5s; }
+
+    .toggle-btn {
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .toggle-btn:hover {
+      color: var(--color-electric);
+    }
+
+    .lang-active {
+      color: var(--color-electric);
+    }
+    .lang-inactive {
+      color: var(--color-on-surface);
+    }
   </style>
 </head>
 <body class="font-inter text-on-bg min-h-screen flex flex-col items-center">
 
-  <main class="w-full max-w-[480px] mx-auto px-6 py-12 flex flex-col gap-10">
+  <main class="w-full max-w-[480px] mx-auto px-6 py-12 flex flex-col gap-10 relative">
+
+    <!-- CONTROLS: Theme + Language -->
+    <div class="flex items-center gap-4 justify-end animate-in" style="margin-bottom: -1.5rem;">
+      <!-- Language toggle -->
+      <button id="lang-toggle" class="font-mono text-xs flex items-center gap-1 toggle-btn" aria-label="Toggle language">
+        <span id="lang-es" class="lang-active">ES</span>
+        <span class="text-on-surface">/</span>
+        <span id="lang-en" class="lang-inactive">EN</span>
+      </button>
+
+      <!-- Theme toggle -->
+      <button id="theme-toggle" class="text-on-surface toggle-btn" aria-label="Toggle theme">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
 
     <!-- HERO -->
     <section class="flex flex-col items-center text-center gap-4 animate-in">
@@ -120,24 +217,20 @@
       </div>
       <div>
         <h1 class="text-2xl font-bold tracking-tight">Luis González</h1>
-        <p class="font-mono text-sm text-cyber-light mt-1">SRE que construye con IA</p>
+        <p class="font-mono text-sm text-cyber-light mt-1" data-i18n="hero.tagline">SRE que construye con IA</p>
       </div>
 
       <!-- Social icons -->
       <div class="flex gap-5 mt-2">
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/iamluisgb/" target="_blank" rel="noopener" class="text-on-surface hover:text-electric glow-hover transition-colors" aria-label="LinkedIn">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <!-- X / Twitter -->
         <a href="https://x.com/iamluisgb" target="_blank" rel="noopener" class="text-on-surface hover:text-electric glow-hover transition-colors" aria-label="X (Twitter)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <!-- Instagram -->
         <a href="https://instagram.com/iamluisgb" target="_blank" rel="noopener" class="text-on-surface hover:text-electric glow-hover transition-colors" aria-label="Instagram">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <!-- GitHub -->
         <a href="https://github.com/iamluisgb" target="_blank" rel="noopener" class="text-on-surface hover:text-electric glow-hover transition-colors" aria-label="GitHub">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
         </a>
@@ -146,7 +239,7 @@
 
     <!-- PROJECTS -->
     <section class="flex flex-col gap-3 animate-in delay-1">
-      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1">// Proyectos</h2>
+      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1" data-i18n="section.projects">// Proyectos</h2>
 
       <a href="https://iamluisgb.github.io/arete" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
         <div class="w-9 h-9 rounded-sm overflow-hidden flex-shrink-0">
@@ -154,7 +247,7 @@
         </div>
         <div>
           <p class="font-semibold text-sm">Areté</p>
-          <p class="font-mono text-xs text-on-surface mt-0.5">Tu app de entrenamiento personalizable. Fuerza, running o ambos.</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="project.arete.desc">Tu app de entrenamiento personalizable. Fuerza, running o ambos.</p>
         </div>
         <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
@@ -165,7 +258,7 @@
         </div>
         <div>
           <p class="font-semibold text-sm">Food & Farm Analytics</p>
-          <p class="font-mono text-xs text-on-surface mt-0.5">ERP para agricultores — ganador A3BT 2020</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="project.fnf.desc">ERP para agricultores — ganador A3BT 2020</p>
         </div>
         <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
@@ -173,13 +266,13 @@
 
     <!-- CONTENT -->
     <section class="flex flex-col gap-3 animate-in delay-2">
-      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1">// Contenido</h2>
+      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1" data-i18n="section.content">// Contenido</h2>
 
       <a href="https://www.linkedin.com/in/iamluisgb/recent-activity/all/" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
         <span class="text-cyber-light text-lg">&#9998;</span>
         <div>
-          <p class="font-semibold text-sm">Posts en LinkedIn</p>
-          <p class="font-mono text-xs text-on-surface mt-0.5">SRE, IA, observabilidad y reinvención profesional</p>
+          <p class="font-semibold text-sm" data-i18n="content.linkedin.title">Posts en LinkedIn</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="content.linkedin.desc">SRE, IA, observabilidad y reinvención profesional</p>
         </div>
         <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
@@ -187,8 +280,8 @@
       <a href="https://github.com/iamluisgb?tab=repositories" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
         <span class="text-cyber-light text-lg">&#10094;/&#10095;</span>
         <div>
-          <p class="font-semibold text-sm">Cursos Python & DevOps</p>
-          <p class="font-mono text-xs text-on-surface mt-0.5">Repos de clases — Python, Django, CI/CD, Docker</p>
+          <p class="font-semibold text-sm" data-i18n="content.courses.title">Cursos Python & DevOps</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="content.courses.desc">Repos de clases — Python, Django, CI/CD, Docker</p>
         </div>
         <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
@@ -196,10 +289,10 @@
 
     <!-- TECH STACK -->
     <section class="flex flex-col gap-4 animate-in delay-3">
-      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest">// Stack</h2>
+      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest" data-i18n="section.stack">// Stack</h2>
 
       <div>
-        <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Observabilidad & Incident Management</p>
+        <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2" data-i18n="stack.observability">Observabilidad & Incident Management</p>
         <div class="flex flex-wrap gap-2">
           <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Splunk ITSI</span>
           <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">PagerDuty</span>
@@ -224,7 +317,7 @@
       </div>
 
       <div>
-        <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Desarrollo</p>
+        <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2" data-i18n="stack.dev">Desarrollo</p>
         <div class="flex flex-wrap gap-2">
           <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Python</span>
           <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">FastAPI</span>
@@ -257,14 +350,14 @@
 
     <!-- ABOUT -->
     <section class="glass-panel rounded-sm px-5 py-5 animate-in delay-4">
-      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-3">// Sobre mí</h2>
-      <p class="text-sm leading-relaxed text-on-bg">
+      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-3" data-i18n="section.about">// Sobre mí</h2>
+      <p class="text-sm leading-relaxed text-on-bg" data-i18n="about.text1">
         SRE en el sector farmacéutico. Gestiono Splunk ITSI y PagerDuty como columna vertebral de observabilidad. Construyendo agentes de AI.
       </p>
-      <p class="text-sm leading-relaxed text-on-bg mt-3">
+      <p class="text-sm leading-relaxed text-on-bg mt-3" data-i18n="about.text2">
         Profesor de Python y DevOps. Builder de Areté y fnfanalytics.
       </p>
-      <p class="text-sm leading-relaxed text-on-bg mt-3 italic text-on-surface">
+      <p class="text-sm leading-relaxed text-on-bg mt-3 italic text-on-surface" data-i18n="about.text3">
         Sistema sobre motivación.
       </p>
     </section>
@@ -272,11 +365,137 @@
     <!-- FOOTER -->
     <footer class="text-center flex flex-col gap-2 pt-4 animate-in delay-5">
       <a href="mailto:luisgonzalezb93@gmail.com" class="font-mono text-xs text-cyber-light hover:text-electric transition-colors">luisgonzalezb93@gmail.com</a>
-      <p class="font-mono text-xs text-on-surface">Badajoz, España</p>
+      <p class="font-mono text-xs text-on-surface" data-i18n="footer.location">Badajoz, España</p>
       <p class="font-mono text-[10px] text-on-surface mt-4 opacity-50">v2.0</p>
     </footer>
 
   </main>
+
+  <script>
+    // --- i18n ---
+    var translations = {
+      es: {
+        'hero.tagline': 'SRE que construye con IA',
+        'section.projects': '// Proyectos',
+        'project.arete.desc': 'Tu app de entrenamiento personalizable. Fuerza, running o ambos.',
+        'project.fnf.desc': 'ERP para agricultores — ganador A3BT 2020',
+        'section.content': '// Contenido',
+        'content.linkedin.title': 'Posts en LinkedIn',
+        'content.linkedin.desc': 'SRE, IA, observabilidad y reinvención profesional',
+        'content.courses.title': 'Cursos Python & DevOps',
+        'content.courses.desc': 'Repos de clases — Python, Django, CI/CD, Docker',
+        'section.stack': '// Stack',
+        'stack.observability': 'Observabilidad & Incident Management',
+        'stack.dev': 'Desarrollo',
+        'section.about': '// Sobre mí',
+        'about.text1': 'SRE en el sector farmacéutico. Gestiono Splunk ITSI y PagerDuty como columna vertebral de observabilidad. Construyendo agentes de AI.',
+        'about.text2': 'Profesor de Python y DevOps. Builder de Areté y fnfanalytics.',
+        'about.text3': 'Sistema sobre motivación.',
+        'footer.location': 'Badajoz, España',
+        'meta.description': 'SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.',
+        'og.description': 'SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.',
+        'twitter.description': 'SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.'
+      },
+      en: {
+        'hero.tagline': 'SRE who builds with AI',
+        'section.projects': '// Projects',
+        'project.arete.desc': 'Your customizable training app. Strength, running, or both.',
+        'project.fnf.desc': 'ERP for farmers — A3BT 2020 winner',
+        'section.content': '// Content',
+        'content.linkedin.title': 'LinkedIn Posts',
+        'content.linkedin.desc': 'SRE, AI, observability & career reinvention',
+        'content.courses.title': 'Python & DevOps Courses',
+        'content.courses.desc': 'Course repos — Python, Django, CI/CD, Docker',
+        'section.stack': '// Stack',
+        'stack.observability': 'Observability & Incident Management',
+        'stack.dev': 'Development',
+        'section.about': '// About',
+        'about.text1': 'SRE in pharma. I manage Splunk ITSI and PagerDuty as the observability backbone. Building AI agents.',
+        'about.text2': 'Python and DevOps teacher. Builder of Areté and fnfanalytics.',
+        'about.text3': 'System over motivation.',
+        'footer.location': 'Badajoz, Spain',
+        'meta.description': 'SRE who builds with AI. DevOps, observability, intelligent agents and hybrid athletics.',
+        'og.description': 'SRE who builds with AI. DevOps, observability, intelligent agents and hybrid athletics.',
+        'twitter.description': 'SRE who builds with AI. DevOps, observability, intelligent agents and hybrid athletics.'
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+
+      var t = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key]) el.textContent = t[key];
+      });
+
+      // Update meta tags
+      document.querySelector('meta[name="description"]').setAttribute('content', t['meta.description']);
+      document.querySelector('meta[property="og:description"]').setAttribute('content', t['og.description']);
+      document.querySelector('meta[name="twitter:description"]').setAttribute('content', t['twitter.description']);
+
+      // Update toggle UI
+      var esEl = document.getElementById('lang-es');
+      var enEl = document.getElementById('lang-en');
+      if (lang === 'es') {
+        esEl.className = 'lang-active';
+        enEl.className = 'lang-inactive';
+      } else {
+        esEl.className = 'lang-inactive';
+        enEl.className = 'lang-active';
+      }
+    }
+
+    // --- Theme ---
+    function setTheme(theme) {
+      localStorage.setItem('theme', theme);
+      if (theme === 'light') {
+        document.documentElement.classList.add('light');
+      } else {
+        document.documentElement.classList.remove('light');
+      }
+      updateThemeIcon(theme);
+    }
+
+    function updateThemeIcon(theme) {
+      var sun = document.getElementById('icon-sun');
+      var moon = document.getElementById('icon-moon');
+      if (theme === 'light') {
+        sun.style.display = 'none';
+        moon.style.display = 'block';
+      } else {
+        sun.style.display = 'block';
+        moon.style.display = 'none';
+      }
+    }
+
+    function getCurrentTheme() {
+      return document.documentElement.classList.contains('light') ? 'light' : 'dark';
+    }
+
+    // --- Init ---
+    document.addEventListener('DOMContentLoaded', function() {
+      // Theme icon sync (class already applied in <head>)
+      updateThemeIcon(getCurrentTheme());
+
+      // Theme toggle
+      document.getElementById('theme-toggle').addEventListener('click', function() {
+        setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+      });
+
+      // Language: detect from localStorage or navigator
+      var savedLang = localStorage.getItem('lang');
+      var lang = savedLang || (navigator.language.startsWith('es') ? 'es' : 'en');
+      setLang(lang);
+
+      // Language toggle
+      document.getElementById('lang-toggle').addEventListener('click', function() {
+        var current = document.documentElement.lang;
+        setLang(current === 'es' ? 'en' : 'es');
+      });
+    });
+  </script>
 
 </body>
 </html>
