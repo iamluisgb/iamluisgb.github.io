@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cursos — Luis González</title>
+  <meta name="description" content="Cursos de Python, Análisis de Datos y Terraform por Luis González.">
+  <meta name="author" content="Luis González">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cursos — Luis González">
+  <meta property="og:description" content="Cursos de Python, Análisis de Datos y Terraform por Luis González.">
+  <meta property="og:image" content="https://luisgonzalezbernal.com/images/me-web.png">
+  <meta property="og:url" content="https://luisgonzalezbernal.com/cursos.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cursos — Luis González">
+  <meta name="twitter:description" content="Cursos de Python, Análisis de Datos y Terraform por Luis González.">
+  <meta name="twitter:image" content="https://luisgonzalezbernal.com/images/me-web.png">
+  <meta name="twitter:site" content="@iamluisgb">
+
+  <!-- Prevent FOUC: apply theme before render -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || (!saved && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deep: 'var(--color-bg)',
+            'surface-low': 'var(--color-surface-low)',
+            'surface-mid': 'var(--color-surface-mid)',
+            'surface-high': 'var(--color-surface-high)',
+            'surface-bright': 'var(--color-surface-bright)',
+            electric: 'var(--color-electric)',
+            'electric-dim': 'var(--color-electric-dim)',
+            cyber: 'var(--color-cyber)',
+            'cyber-light': 'var(--color-cyber-light)',
+            'on-bg': 'var(--color-on-bg)',
+            'on-surface': 'var(--color-on-surface)',
+            'outline-v': 'var(--color-outline-v)',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            grotesk: ['Space Grotesk', 'sans-serif'],
+          },
+          borderRadius: {
+            sm: '0.125rem',
+            md: '0.375rem',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* --- Dark mode (default) --- */
+    :root {
+      --color-bg: #10141a;
+      --color-surface-low: #1c2026;
+      --color-surface-mid: #262a31;
+      --color-surface-high: #31353c;
+      --color-surface-bright: #353940;
+      --color-electric: #00ff9d;
+      --color-electric-dim: #00e38b;
+      --color-cyber: #306998;
+      --color-cyber-light: #97cbff;
+      --color-on-bg: #dfe2eb;
+      --color-on-surface: #b9cbbc;
+      --color-outline-v: #3b4a3f;
+      --color-dot-grid: rgba(53, 57, 64, 0.05);
+      --color-glass-bg: rgba(49, 53, 60, 0.4);
+      --color-card-bg: #1c2026;
+      --color-card-hover: #262a31;
+      --color-chip-bg: #262a31;
+      --color-chip-hover: #31353c;
+      --color-glow: rgba(0, 255, 157, 0.4);
+    }
+
+    /* --- Light mode --- */
+    :root.light {
+      --color-bg: #f5f5f7;
+      --color-surface-low: #eaeaed;
+      --color-surface-mid: #dddde2;
+      --color-surface-high: #d0d0d7;
+      --color-surface-bright: #c5c5cd;
+      --color-electric: #00c978;
+      --color-electric-dim: #00b36b;
+      --color-cyber: #306998;
+      --color-cyber-light: #1e5080;
+      --color-on-bg: #1a1d24;
+      --color-on-surface: #4a5568;
+      --color-outline-v: #c0d0c5;
+      --color-dot-grid: rgba(0, 0, 0, 0.04);
+      --color-glass-bg: rgba(255, 255, 255, 0.6);
+      --color-card-bg: #ffffff;
+      --color-card-hover: #f0f0f3;
+      --color-chip-bg: #e8e8ed;
+      --color-chip-hover: #dddde2;
+      --color-glow: rgba(0, 201, 120, 0.3);
+    }
+
+    * {
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      background-image: radial-gradient(var(--color-dot-grid) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .link-card {
+      background: var(--color-card-bg);
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .link-card:hover {
+      background: var(--color-card-hover);
+      transform: translateY(-1px);
+    }
+
+    .chip {
+      background: var(--color-chip-bg);
+      transition: background 0.2s ease;
+    }
+    .chip:hover {
+      background: var(--color-chip-hover);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    .toggle-btn {
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .toggle-btn:hover {
+      color: var(--color-electric);
+    }
+
+    .lang-active {
+      color: var(--color-electric);
+    }
+    .lang-inactive {
+      color: var(--color-on-surface);
+    }
+  </style>
+</head>
+<body class="font-inter text-on-bg min-h-screen flex flex-col items-center">
+
+  <main class="w-full max-w-[480px] mx-auto px-6 py-12 flex flex-col gap-10 relative">
+
+    <!-- CONTROLS: Theme + Language -->
+    <div class="flex items-center gap-4 justify-end animate-in" style="margin-bottom: -1.5rem;">
+      <!-- Language toggle -->
+      <button id="lang-toggle" class="font-mono text-xs flex items-center gap-1 toggle-btn" aria-label="Toggle language">
+        <span id="lang-es" class="lang-active">ES</span>
+        <span class="text-on-surface">/</span>
+        <span id="lang-en" class="lang-inactive">EN</span>
+      </button>
+
+      <!-- Theme toggle -->
+      <button id="theme-toggle" class="text-on-surface toggle-btn" aria-label="Toggle theme">
+        <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- HEADER -->
+    <section class="flex flex-col gap-4 animate-in">
+      <a href="index.html" class="font-mono text-xs text-cyber-light hover:text-electric transition-colors flex items-center gap-1 w-fit">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+        </svg>
+        <span data-i18n="cursos.back">Volver al inicio</span>
+      </a>
+      <div>
+        <h1 class="text-2xl font-bold tracking-tight" data-i18n="cursos.title">Cursos</h1>
+        <p class="font-mono text-sm text-cyber-light mt-1" data-i18n="cursos.subtitle">Material de clases — Python, Data Analysis, Terraform</p>
+      </div>
+    </section>
+
+    <!-- PYTHON -->
+    <section class="flex flex-col gap-3 animate-in delay-1">
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1" data-i18n="cursos.cat.python">// Python</h2>
+
+      <a href="https://github.com/iamluisgb/curso-basico-python" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <p class="font-semibold text-sm" data-i18n="curso.python_basico.title">Curso Básico de Python</p>
+            <p class="font-mono text-[10px] text-cyber-light mt-0.5" data-i18n="curso.python_basico.level">11 clases · Nivel básico</p>
+          </div>
+          <svg class="text-on-surface flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <p class="text-xs text-on-surface leading-relaxed" data-i18n="curso.python_basico.desc">De cero a OOP: condicionales, funciones, listas, diccionarios, clases, herencia, archivos y proyecto final (Battleship).</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Python</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">OOP</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">File I/O</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/iamluisgb/curso-avanzado-python" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <p class="font-semibold text-sm" data-i18n="curso.python_avanzado.title">Curso Avanzado de Python</p>
+            <p class="font-mono text-[10px] text-cyber-light mt-0.5" data-i18n="curso.python_avanzado.level">8 módulos · Nivel intermedio/avanzado</p>
+          </div>
+          <svg class="text-on-surface flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <p class="text-xs text-on-surface leading-relaxed" data-i18n="curso.python_avanzado.desc">Código pythónico, decoradores, generadores, concurrencia, testing y desarrollo web con Django.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Python</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Django</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Decorators</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Concurrency</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Testing</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- DATA ANALYSIS -->
+    <section class="flex flex-col gap-3 animate-in delay-2">
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1" data-i18n="cursos.cat.data">// Análisis de Datos</h2>
+
+      <a href="https://github.com/iamluisgb/curso-analisis-datos-basico-python" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <p class="font-semibold text-sm" data-i18n="curso.data_basico.title">Análisis de Datos Básico con Python</p>
+            <p class="font-mono text-[10px] text-cyber-light mt-0.5" data-i18n="curso.data_basico.level">Nivel básico</p>
+          </div>
+          <svg class="text-on-surface flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <p class="text-xs text-on-surface leading-relaxed" data-i18n="curso.data_basico.desc">Manipulación, limpieza y visualización de datos con NumPy, Pandas y Matplotlib. Datos tabulares, series temporales y arrays multidimensionales.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Python</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Pandas</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">NumPy</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Matplotlib</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/iamluisgb/curso-analisis-datos-avanzado-python" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <p class="font-semibold text-sm" data-i18n="curso.data_avanzado.title">Análisis de Datos Avanzado con Python</p>
+            <p class="font-mono text-[10px] text-cyber-light mt-0.5" data-i18n="curso.data_avanzado.level">Nivel avanzado</p>
+          </div>
+          <svg class="text-on-surface flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <p class="text-xs text-on-surface leading-relaxed" data-i18n="curso.data_avanzado.desc">Entornos virtuales, Docker para análisis, PostgreSQL, MongoDB, dashboards con Shiny y caso práctico de e-commerce.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Python</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Docker</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">PostgreSQL</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">MongoDB</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Shiny</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- DEVOPS -->
+    <section class="flex flex-col gap-3 animate-in delay-3">
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1" data-i18n="cursos.cat.devops">// DevOps</h2>
+
+      <a href="https://github.com/iamluisgb/curso-terraform" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <p class="font-semibold text-sm" data-i18n="curso.terraform.title">Curso Terraform</p>
+            <p class="font-mono text-[10px] text-cyber-light mt-0.5" data-i18n="curso.terraform.level">5 módulos + bonus · Nivel básico/intermedio</p>
+          </div>
+          <svg class="text-on-surface flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <p class="text-xs text-on-surface leading-relaxed" data-i18n="curso.terraform.desc">Infraestructura como código: variables, EC2 en AWS, workspaces, módulos y bonus de Ansible.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Terraform</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">AWS</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">IaC</span>
+          <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Ansible</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center flex flex-col gap-2 pt-4 animate-in">
+      <a href="index.html" class="font-mono text-xs text-cyber-light hover:text-electric transition-colors" data-i18n="cursos.back">Volver al inicio</a>
+      <p class="font-mono text-[10px] text-on-surface mt-4 opacity-50">v2.0</p>
+    </footer>
+
+  </main>
+
+  <script>
+    // --- i18n ---
+    var translations = {
+      es: {
+        'cursos.back': 'Volver al inicio',
+        'cursos.title': 'Cursos',
+        'cursos.subtitle': 'Material de clases — Python, Data Analysis, Terraform',
+        'cursos.cat.python': '// Python',
+        'cursos.cat.data': '// Análisis de Datos',
+        'cursos.cat.devops': '// DevOps',
+        'curso.python_basico.title': 'Curso Básico de Python',
+        'curso.python_basico.level': '11 clases · Nivel básico',
+        'curso.python_basico.desc': 'De cero a OOP: condicionales, funciones, listas, diccionarios, clases, herencia, archivos y proyecto final (Battleship).',
+        'curso.python_avanzado.title': 'Curso Avanzado de Python',
+        'curso.python_avanzado.level': '8 módulos · Nivel intermedio/avanzado',
+        'curso.python_avanzado.desc': 'Código pythónico, decoradores, generadores, concurrencia, testing y desarrollo web con Django.',
+        'curso.data_basico.title': 'Análisis de Datos Básico con Python',
+        'curso.data_basico.level': 'Nivel básico',
+        'curso.data_basico.desc': 'Manipulación, limpieza y visualización de datos con NumPy, Pandas y Matplotlib. Datos tabulares, series temporales y arrays multidimensionales.',
+        'curso.data_avanzado.title': 'Análisis de Datos Avanzado con Python',
+        'curso.data_avanzado.level': 'Nivel avanzado',
+        'curso.data_avanzado.desc': 'Entornos virtuales, Docker para análisis, PostgreSQL, MongoDB, dashboards con Shiny y caso práctico de e-commerce.',
+        'curso.terraform.title': 'Curso Terraform',
+        'curso.terraform.level': '5 módulos + bonus · Nivel básico/intermedio',
+        'curso.terraform.desc': 'Infraestructura como código: variables, EC2 en AWS, workspaces, módulos y bonus de Ansible.',
+        'meta.description': 'Cursos de Python, Análisis de Datos y Terraform por Luis González.'
+      },
+      en: {
+        'cursos.back': 'Back to home',
+        'cursos.title': 'Courses',
+        'cursos.subtitle': 'Course materials — Python, Data Analysis, Terraform',
+        'cursos.cat.python': '// Python',
+        'cursos.cat.data': '// Data Analysis',
+        'cursos.cat.devops': '// DevOps',
+        'curso.python_basico.title': 'Python Basics Course',
+        'curso.python_basico.level': '11 classes · Beginner',
+        'curso.python_basico.desc': 'From zero to OOP: conditionals, functions, lists, dicts, classes, inheritance, file I/O, and a final project (Battleship).',
+        'curso.python_avanzado.title': 'Advanced Python Course',
+        'curso.python_avanzado.level': '8 modules · Intermediate/Advanced',
+        'curso.python_avanzado.desc': 'Pythonic code, decorators, generators, concurrency, testing, and web development with Django.',
+        'curso.data_basico.title': 'Basic Data Analysis with Python',
+        'curso.data_basico.level': 'Beginner',
+        'curso.data_basico.desc': 'Data manipulation, cleaning, and visualization with NumPy, Pandas, and Matplotlib. Tabular data, time series, and multidimensional arrays.',
+        'curso.data_avanzado.title': 'Advanced Data Analysis with Python',
+        'curso.data_avanzado.level': 'Advanced',
+        'curso.data_avanzado.desc': 'Virtual environments, Docker for analysis, PostgreSQL, MongoDB, Shiny dashboards, and an e-commerce case study.',
+        'curso.terraform.title': 'Terraform Course',
+        'curso.terraform.level': '5 modules + bonus · Beginner/Intermediate',
+        'curso.terraform.desc': 'Infrastructure as Code: variables, EC2 on AWS, workspaces, modules, and an Ansible bonus.',
+        'meta.description': 'Python, Data Analysis, and Terraform courses by Luis González.'
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+
+      var t = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key]) el.textContent = t[key];
+      });
+
+      // Update meta description
+      document.querySelector('meta[name="description"]').setAttribute('content', t['meta.description']);
+
+      // Update toggle UI
+      var esEl = document.getElementById('lang-es');
+      var enEl = document.getElementById('lang-en');
+      if (lang === 'es') {
+        esEl.className = 'lang-active';
+        enEl.className = 'lang-inactive';
+      } else {
+        esEl.className = 'lang-inactive';
+        enEl.className = 'lang-active';
+      }
+    }
+
+    // --- Theme ---
+    function setTheme(theme) {
+      localStorage.setItem('theme', theme);
+      if (theme === 'light') {
+        document.documentElement.classList.add('light');
+      } else {
+        document.documentElement.classList.remove('light');
+      }
+      updateThemeIcon(theme);
+    }
+
+    function updateThemeIcon(theme) {
+      var sun = document.getElementById('icon-sun');
+      var moon = document.getElementById('icon-moon');
+      if (theme === 'light') {
+        sun.style.display = 'none';
+        moon.style.display = 'block';
+      } else {
+        sun.style.display = 'block';
+        moon.style.display = 'none';
+      }
+    }
+
+    function getCurrentTheme() {
+      return document.documentElement.classList.contains('light') ? 'light' : 'dark';
+    }
+
+    // --- Init ---
+    document.addEventListener('DOMContentLoaded', function() {
+      // Theme icon sync
+      updateThemeIcon(getCurrentTheme());
+
+      // Theme toggle
+      document.getElementById('theme-toggle').addEventListener('click', function() {
+        setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+      });
+
+      // Language: detect from localStorage or navigator
+      var savedLang = localStorage.getItem('lang');
+      var lang = savedLang || (navigator.language.startsWith('es') ? 'es' : 'en');
+      setLang(lang);
+
+      // Language toggle
+      document.getElementById('lang-toggle').addEventListener('click', function() {
+        var current = document.documentElement.lang;
+        setLang(current === 'es' ? 'en' : 'es');
+      });
+    });
+  </script>
+
+</body>
+</html>
