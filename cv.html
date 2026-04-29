@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume — Luis González</title>
+  <meta name="description" content="Luis González — SRE, DevOps & Automation. Resume.">
+  <meta name="author" content="Luis González">
+
+  <!-- Umami Analytics -->
+  <script defer src="/u/s.js" data-website-id="08c1619b-4bb8-471b-9dc9-9b6cda88e8ae"></script>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Resume — Luis González">
+  <meta property="og:description" content="Luis González — SRE, DevOps & Automation. Resume.">
+  <meta property="og:image" content="https://luisgonzalezbernal.com/images/me-web.png">
+  <meta property="og:url" content="https://luisgonzalezbernal.com/cv.html">
+  <meta property="og:type" content="profile">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Resume — Luis González">
+  <meta name="twitter:description" content="Luis González — SRE, DevOps & Automation. Resume.">
+  <meta name="twitter:image" content="https://luisgonzalezbernal.com/images/me-web.png">
+  <meta name="twitter:site" content="@iamluisgb">
+
+  <!-- Prevent FOUC -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || (!saved && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deep: 'var(--color-bg)',
+            'surface-low': 'var(--color-surface-low)',
+            'surface-mid': 'var(--color-surface-mid)',
+            'surface-high': 'var(--color-surface-high)',
+            'surface-bright': 'var(--color-surface-bright)',
+            electric: 'var(--color-electric)',
+            'electric-dim': 'var(--color-electric-dim)',
+            cyber: 'var(--color-cyber)',
+            'cyber-light': 'var(--color-cyber-light)',
+            'on-bg': 'var(--color-on-bg)',
+            'on-surface': 'var(--color-on-surface)',
+            'outline-v': 'var(--color-outline-v)',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            grotesk: ['Space Grotesk', 'sans-serif'],
+          },
+          borderRadius: {
+            sm: '0.125rem',
+            md: '0.375rem',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* --- Dark mode (default) --- */
+    :root {
+      --color-bg: #10141a;
+      --color-surface-low: #1c2026;
+      --color-surface-mid: #262a31;
+      --color-surface-high: #31353c;
+      --color-surface-bright: #353940;
+      --color-electric: #00ff9d;
+      --color-electric-dim: #00e38b;
+      --color-cyber: #306998;
+      --color-cyber-light: #97cbff;
+      --color-on-bg: #dfe2eb;
+      --color-on-surface: #b9cbbc;
+      --color-outline-v: #3b4a3f;
+      --color-dot-grid: rgba(53, 57, 64, 0.05);
+      --color-glass-bg: rgba(49, 53, 60, 0.4);
+      --color-card-bg: #1c2026;
+      --color-card-hover: #262a31;
+      --color-chip-bg: #262a31;
+      --color-chip-hover: #31353c;
+      --color-glow: rgba(0, 255, 157, 0.4);
+    }
+
+    /* --- Light mode --- */
+    :root.light {
+      --color-bg: #f5f5f7;
+      --color-surface-low: #eaeaed;
+      --color-surface-mid: #dddde2;
+      --color-surface-high: #d0d0d7;
+      --color-surface-bright: #c5c5cd;
+      --color-electric: #00c978;
+      --color-electric-dim: #00b36b;
+      --color-cyber: #306998;
+      --color-cyber-light: #1e5080;
+      --color-on-bg: #1a1d24;
+      --color-on-surface: #4a5568;
+      --color-outline-v: #c0d0c5;
+      --color-dot-grid: rgba(0, 0, 0, 0.04);
+      --color-glass-bg: rgba(255, 255, 255, 0.6);
+      --color-card-bg: #ffffff;
+      --color-card-hover: #f0f0f3;
+      --color-chip-bg: #e8e8ed;
+      --color-chip-hover: #dddde2;
+      --color-glow: rgba(0, 201, 120, 0.3);
+    }
+
+    * {
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      background-image: radial-gradient(var(--color-dot-grid) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .role-card {
+      background: var(--color-card-bg);
+    }
+
+    .chip {
+      background: var(--color-chip-bg);
+      transition: background 0.2s ease;
+    }
+    .chip:hover {
+      background: var(--color-chip-hover);
+    }
+
+    .pdf-btn {
+      background: var(--color-card-bg);
+      transition: background 0.2s ease, transform 0.15s ease, color 0.2s ease;
+    }
+    .pdf-btn:hover {
+      background: var(--color-card-hover);
+      transform: translateY(-1px);
+      color: var(--color-electric);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+
+    .toggle-btn {
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .toggle-btn:hover {
+      color: var(--color-electric);
+    }
+
+    ul.bullets li {
+      position: relative;
+      padding-left: 1rem;
+    }
+    ul.bullets li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--color-electric);
+      font-size: 0.75rem;
+      top: 0.15rem;
+    }
+
+    /* --- Print styles for clean PDF export --- */
+    @media print {
+      :root {
+        --color-bg: #ffffff;
+        --color-card-bg: #ffffff;
+        --color-card-hover: #ffffff;
+        --color-chip-bg: #f0f0f3;
+        --color-on-bg: #1a1d24;
+        --color-on-surface: #4a5568;
+        --color-electric: #00a060;
+        --color-cyber-light: #1e5080;
+      }
+      body {
+        background-image: none !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      main {
+        max-width: 100% !important;
+        padding: 1.5rem !important;
+      }
+      .animate-in {
+        animation: none !important;
+        opacity: 1 !important;
+      }
+      .role-card, .chip {
+        border: 1px solid #e5e5e8;
+      }
+      a {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+      @page {
+        margin: 0.5in;
+      }
+    }
+  </style>
+</head>
+<body class="font-inter text-on-bg min-h-screen flex flex-col items-center">
+
+  <main class="w-full max-w-[720px] mx-auto px-6 py-12 flex flex-col gap-10 relative">
+
+    <!-- CONTROLS: Theme + Download PDF -->
+    <div class="flex items-center gap-4 justify-end animate-in no-print" style="margin-bottom: -1.5rem;">
+      <a href="cv.pdf" download="Luis_Gonzalez_Resume.pdf" class="pdf-btn font-mono text-xs flex items-center gap-1.5 px-3 py-1.5 rounded-sm text-on-surface" aria-label="Download PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span>Download PDF</span>
+      </a>
+
+      <button id="theme-toggle" class="text-on-surface toggle-btn" aria-label="Toggle theme">
+        <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- HEADER -->
+    <section class="flex flex-col gap-4 animate-in">
+      <a href="index.html" class="font-mono text-xs text-cyber-light hover:text-electric transition-colors flex items-center gap-1 w-fit no-print">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+        </svg>
+        <span>Back to home</span>
+      </a>
+      <div>
+        <h1 class="text-2xl font-bold tracking-tight">Luis González Bernal</h1>
+        <p class="font-mono text-sm text-cyber-light mt-1">SRE | DevOps | CI/CD | Automation</p>
+      </div>
+      <p class="text-sm text-on-surface leading-relaxed">
+        Site Reliability Engineer with a background in Backend Development with Python. Experience in automation with Rundeck, Ansible and Gitlab, creation of CI/CD pipelines and deployment in Kubernetes. I like working within agile teams and collaborating with others to find innovative solutions.
+      </p>
+
+      <!-- Contact chips -->
+      <div class="flex flex-wrap gap-2 mt-1">
+        <a href="https://www.linkedin.com/in/iamluisgb/" target="_blank" rel="noopener" class="chip font-mono text-[11px] text-on-surface px-3 py-1.5 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/iamluisgb" target="_blank" rel="noopener" class="chip font-mono text-[11px] text-on-surface px-3 py-1.5 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2c-3.34.72-4.04-1.4-4.04-1.4-.55-1.4-1.34-1.78-1.34-1.78-1.1-.74.08-.72.08-.72 1.21.08 1.85 1.24 1.85 1.24 1.07 1.85 2.81 1.31 3.5 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.46-1.34-5.46-5.94 0-1.31.46-2.38 1.23-3.22-.12-.31-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.87.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .3"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:luisgonzalezb93@gmail.com" class="chip font-mono text-[11px] text-on-surface px-3 py-1.5 rounded-md flex items-center gap-1.5 hover:text-electric transition-colors">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          luisgonzalezb93@gmail.com
+        </a>
+        <span class="chip font-mono text-[11px] text-on-surface px-3 py-1.5 rounded-md flex items-center gap-1.5">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +34 630 254 790
+        </span>
+        <span class="chip font-mono text-[11px] text-on-surface px-3 py-1.5 rounded-md flex items-center gap-1.5">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Madrid, Spain
+        </span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="flex flex-col gap-4 animate-in delay-1">
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Experience</h2>
+
+      <article class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <div>
+            <p class="font-semibold text-sm">DevOps / SRE — Team Lead</p>
+            <p class="font-mono text-[11px] text-cyber-light mt-0.5">Famytec (contractor at Roche) · Madrid, Spain</p>
+          </div>
+          <span class="font-mono text-[10px] text-on-surface">01/2022 — Current</span>
+        </div>
+        <ul class="bullets text-xs text-on-surface leading-relaxed flex flex-col gap-1.5">
+          <li>Manage the Rundeck instance at Roche running ~3,000 jobs/day. Built CI/CD pipelines deploying Rundeck on Kubernetes with Ansible and Jenkins, reaching an SLI of 99.97%. Diagnose and resolve issues while minimizing user impact.</li>
+          <li>Extended Rundeck with custom Python and Bash plugins integrating Splunk, ServiceNow and HashiCorp Vault.</li>
+          <li>Built <em>Autodispatcher</em>: a Django web app that classifies ServiceNow incidents with a neural network and auto-assigns them to the right technician — cutting ticket assignment time by 90%. Stack: Python, Django, JavaScript, Docker, Nginx, Celery.</li>
+          <li>Helped users automate processes with Rundeck (e.g. bulk update of 600+ AWS accounts), running demo days and writing onboarding guidelines.</li>
+          <li>As Team Lead, I guide a group of SREs embedded across client projects — fostering continuous learning, sharing best practices and ensuring high engineering standards.</li>
+        </ul>
+      </article>
+
+      <article class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <div>
+            <p class="font-semibold text-sm">Backend Developer / Data Analyst</p>
+            <p class="font-mono text-[11px] text-cyber-light mt-0.5">Haciendas Bio · Badajoz, Spain</p>
+          </div>
+          <span class="font-mono text-[10px] text-on-surface">01/2018 — 12/2021</span>
+        </div>
+        <ul class="bullets text-xs text-on-surface leading-relaxed flex flex-col gap-1.5">
+          <li>Designed and shipped an ERP on AWS for the production department (40+ daily users), replacing Excel-based workflows and cutting data-recording time by 50%. Stack: Python, Django, JavaScript, AWS (EC2, RDS, S3, Lambda), Linux, Docker.</li>
+          <li>Built a BI platform to control production costs — enabling data-driven decisions that reduced some activity costs by 20%. Stack: R, SQL, Shiny, RMarkdown, Plotly.</li>
+          <li>Developed harvest-prediction models for multiple crops, improving forecast accuracy by 70%. Stack: R.</li>
+        </ul>
+      </article>
+
+      <article class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <div>
+            <p class="font-semibold text-sm">Agricultural Engineer</p>
+            <p class="font-mono text-[11px] text-cyber-light mt-0.5">Haciendas Bio · Badajoz, Spain</p>
+          </div>
+          <span class="font-mono text-[10px] text-on-surface">06/2016 — 12/2017</span>
+        </div>
+        <ul class="bullets text-xs text-on-surface leading-relaxed flex flex-col gap-1.5">
+          <li>Managed and planned work units on a farm operation, leading teams of up to 50 people.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="flex flex-col gap-3 animate-in delay-2">
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Skills</h2>
+
+      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-4">
+        <div>
+          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">DevOps & SRE</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">CI/CD</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Jenkins</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Ansible</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Docker</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Kubernetes</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Rundeck</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Git</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">GitHub</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">GitLab</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Bitbucket</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Gitflow</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Trunk-Based Dev</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Observability</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Prometheus</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">New Relic</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">EFK Stack</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Sysdig</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Backend & Data</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Python</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Django</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">DRF</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">NumPy</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Pandas</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">R</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Shiny</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Plotly</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">JavaScript</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">MySQL</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Cloud & Platform</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">AWS</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Linux</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Languages</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">English — Professional</span>
+            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Spanish — Native</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="flex flex-col gap-3 animate-in delay-3">
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Education</h2>
+
+      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <div>
+            <p class="font-semibold text-sm">Master in Digital Transformation</p>
+            <p class="font-mono text-[11px] text-cyber-light mt-0.5">University of Córdoba · Córdoba, Spain</p>
+          </div>
+          <span class="font-mono text-[10px] text-on-surface">2018 — 2019</span>
+        </div>
+      </div>
+
+      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <div>
+            <p class="font-semibold text-sm">Master in Agricultural Engineering</p>
+            <p class="font-mono text-[11px] text-cyber-light mt-0.5">University of Córdoba · Córdoba, Spain</p>
+          </div>
+          <span class="font-mono text-[10px] text-on-surface">2015 — 2017</span>
+        </div>
+      </div>
+
+      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <div>
+            <p class="font-semibold text-sm">Degree in Agricultural Engineering</p>
+            <p class="font-mono text-[11px] text-cyber-light mt-0.5">University of Extremadura · Badajoz, Spain</p>
+          </div>
+          <span class="font-mono text-[10px] text-on-surface">2011 — 2015</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="flex flex-col gap-3 animate-in delay-3">
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Projects</h2>
+
+      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-2">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <p class="font-semibold text-sm">fnfanalytics</p>
+          <span class="font-mono text-[10px] text-on-surface">2020 — Current</span>
+        </div>
+        <p class="text-xs text-on-surface leading-relaxed">ERP that helps farmers be more efficient — record all crop work and analyze costs in an advanced way.</p>
+      </div>
+    </section>
+
+    <!-- MENTORSHIP -->
+    <section class="flex flex-col gap-3 animate-in delay-4">
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Mentorship</h2>
+
+      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-2">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <p class="font-semibold text-sm">Python Teacher</p>
+          <span class="font-mono text-[10px] text-on-surface">2023 — Current</span>
+        </div>
+        <p class="text-xs text-on-surface leading-relaxed">Programming · Data Structures & Algorithms · Django · Data Analysis with Python.</p>
+      </div>
+
+      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-2">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <p class="font-semibold text-sm">DevOps Teacher</p>
+          <span class="font-mono text-[10px] text-on-surface">2024 — Current</span>
+        </div>
+        <p class="text-xs text-on-surface leading-relaxed">CI/CD · Automation.</p>
+      </div>
+    </section>
+
+    <!-- AWARDS & CERTIFICATIONS -->
+    <section class="flex flex-col gap-3 animate-in delay-5">
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Awards & Certifications</h2>
+
+      <ul class="bullets text-xs text-on-surface leading-relaxed flex flex-col gap-2 px-4">
+        <li><strong class="text-on-bg">Copernicus Hackathon Málaga — 1st Prize (2020).</strong> Built an app using satellite imagery to predict and visualize mosquito and jellyfish outbreaks.</li>
+        <li><strong class="text-on-bg">A3BT Business Project Competition — 1st Prize (2020).</strong> ERP that helps farmers be more efficient.</li>
+        <li><strong class="text-on-bg">Certified SAFe® 5 Agilist.</strong></li>
+      </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center flex flex-col gap-2 pt-4 animate-in no-print">
+      <a href="index.html" class="font-mono text-xs text-cyber-light hover:text-electric transition-colors">Back to home</a>
+      <p class="font-mono text-[10px] text-on-surface mt-4 opacity-50">v2.0</p>
+    </footer>
+
+  </main>
+
+  <script>
+    function setTheme(theme) {
+      localStorage.setItem('theme', theme);
+      if (theme === 'light') {
+        document.documentElement.classList.add('light');
+      } else {
+        document.documentElement.classList.remove('light');
+      }
+      updateThemeIcon(theme);
+    }
+
+    function updateThemeIcon(theme) {
+      var sun = document.getElementById('icon-sun');
+      var moon = document.getElementById('icon-moon');
+      if (theme === 'light') {
+        sun.style.display = 'none';
+        moon.style.display = 'block';
+      } else {
+        sun.style.display = 'block';
+        moon.style.display = 'none';
+      }
+    }
+
+    function getCurrentTheme() {
+      return document.documentElement.classList.contains('light') ? 'light' : 'dark';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      updateThemeIcon(getCurrentTheme());
+      document.getElementById('theme-toggle').addEventListener('click', function() {
+        setTheme(getCurrentTheme() === 'dark' ? 'light' : 'dark');
+      });
+    });
+  </script>
+
+</body>
+</html>

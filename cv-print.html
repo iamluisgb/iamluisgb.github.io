@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Luis González Bernal — Resume</title>
+<style>
+  @page {
+    size: Letter;
+    margin: 0.4in 0.55in;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 9.5pt;
+    line-height: 1.18;
+    color: #000;
+    background: #fff;
+  }
+
+  .page {
+    width: 7.3in;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* --- Header --- */
+  header {
+    text-align: center;
+    margin-bottom: 5pt;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 16pt;
+    font-weight: bold;
+    letter-spacing: 0.5pt;
+    text-transform: uppercase;
+  }
+  header .tagline {
+    font-size: 9.5pt;
+    margin-top: 1pt;
+    font-style: italic;
+  }
+  header .contact {
+    font-size: 8.5pt;
+    margin-top: 3pt;
+  }
+  header .contact a {
+    color: #000;
+    text-decoration: none;
+  }
+  header .contact .sep {
+    margin: 0 5pt;
+    color: #555;
+  }
+
+  /* --- Section heading --- */
+  h2 {
+    font-size: 10pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+    margin: 6pt 0 2pt 0;
+    padding-bottom: 1pt;
+    border-bottom: 0.5pt solid #000;
+  }
+
+  /* --- Summary --- */
+  .summary {
+    margin: 3pt 0 0 0;
+    text-align: justify;
+  }
+
+  /* --- Entry (job/education) --- */
+  .entry {
+    margin-top: 3pt;
+  }
+  .entry-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8pt;
+  }
+  .entry-row .left {
+    font-weight: bold;
+  }
+  .entry-row .right {
+    font-style: italic;
+    white-space: nowrap;
+  }
+  .entry-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8pt;
+    font-style: italic;
+    margin-top: 0;
+  }
+  .entry-sub .right {
+    font-style: italic;
+  }
+
+  ul {
+    margin: 2pt 0 0 0;
+    padding-left: 16pt;
+  }
+  ul li {
+    margin-bottom: 1pt;
+    text-align: justify;
+  }
+
+  /* --- Skills compact --- */
+  .skills p {
+    margin: 2pt 0;
+  }
+  .skills .label {
+    font-weight: bold;
+  }
+
+  /* --- Misc list (awards) --- */
+  .misc-list {
+    padding-left: 16pt;
+    margin: 2pt 0 0 0;
+  }
+  .misc-list li {
+    margin-bottom: 1pt;
+  }
+
+  /* avoid orphan headings */
+  h2 { page-break-after: avoid; }
+  .entry { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Luis González Bernal</h1>
+    <div class="tagline">SRE | DevOps | CI/CD | Automation</div>
+    <div class="contact">
+      Madrid, Spain
+      <span class="sep">|</span>
+      +34 630 254 790
+      <span class="sep">|</span>
+      <a href="mailto:luisgonzalezb93@gmail.com">luisgonzalezb93@gmail.com</a>
+      <span class="sep">|</span>
+      <a href="https://luisgonzalezbernal.com">luisgonzalezbernal.com</a>
+      <span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/iamluisgb/">LinkedIn</a>
+      <span class="sep">|</span>
+      <a href="https://github.com/iamluisgb">GitHub</a>
+    </div>
+  </header>
+
+  <p class="summary">
+    Site Reliability Engineer with a background in Backend Development with Python. Experience in automation with Rundeck, Ansible and GitLab, creation of CI/CD pipelines and deployment in Kubernetes. I enjoy working within agile teams and collaborating with others to find innovative solutions.
+  </p>
+
+  <h2>Skills</h2>
+  <div class="skills">
+    <p><span class="label">DevOps &amp; SRE:</span> CI/CD, Jenkins, Ansible, Docker, Kubernetes, Rundeck, Git, GitHub, GitLab, Bitbucket, Prometheus, New Relic, EFK Stack, Sysdig, Gitflow, Trunk-Based Development.</p>
+    <p><span class="label">Backend &amp; Data:</span> Python, Django, Django REST Framework, NumPy, Pandas, R, Shiny, Plotly, JavaScript, MySQL, PostgreSQL.</p>
+    <p><span class="label">Cloud &amp; Platform:</span> AWS, Linux, Backend, Full-Stack.</p>
+    <p><span class="label">Languages:</span> English &mdash; Professional proficiency. Spanish &mdash; Native.</p>
+  </div>
+
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="entry-row">
+      <span class="left">Famytec (contractor at Roche)</span>
+      <span class="right">Madrid, Spain</span>
+    </div>
+    <div class="entry-sub">
+      <span>DevOps / SRE &mdash; Team Lead</span>
+      <span class="right">01/2022 &ndash; Present</span>
+    </div>
+    <ul>
+      <li>Manage the Rundeck instance at Roche running ~3,000 jobs/day. Built CI/CD pipelines deploying Rundeck on Kubernetes with Ansible and Jenkins, reaching an SLI of 99.97%. Diagnose and resolve issues while minimizing user impact.</li>
+      <li>Extended Rundeck with custom Python and Bash plugins integrating Splunk, ServiceNow and HashiCorp Vault.</li>
+      <li>Built <em>Autodispatcher</em>, a Django web app that classifies ServiceNow incidents with a neural network and auto-assigns them to the right technician, cutting ticket assignment time by 90%. Stack: Python, Django, JavaScript, Docker, Nginx, Celery.</li>
+      <li>Helped users automate processes with Rundeck (e.g. bulk update of 600+ AWS accounts), running demo days and writing onboarding guidelines.</li>
+      <li>As Team Lead, guide a group of SREs embedded across client projects &mdash; fostering continuous learning, sharing best practices and ensuring high engineering standards.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-row">
+      <span class="left">Haciendas Bio</span>
+      <span class="right">Badajoz, Spain</span>
+    </div>
+    <div class="entry-sub">
+      <span>Backend Developer / Data Analyst</span>
+      <span class="right">01/2018 &ndash; 12/2021</span>
+    </div>
+    <ul>
+      <li>Designed and shipped an ERP on AWS for the production department (40+ daily users), replacing Excel-based workflows and cutting data-recording time by 50%. Stack: Python, Django, JavaScript, AWS (EC2, RDS, S3, Lambda), Linux, Docker.</li>
+      <li>Built a BI platform to control production costs, enabling data-driven decisions that reduced some activity costs by 20%. Stack: R, SQL, Shiny, RMarkdown, Plotly.</li>
+      <li>Developed harvest-prediction models for multiple crops, improving forecast accuracy by 70%. Stack: R.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-row">
+      <span class="left">Haciendas Bio</span>
+      <span class="right">Badajoz, Spain</span>
+    </div>
+    <div class="entry-sub">
+      <span>Agricultural Engineer</span>
+      <span class="right">06/2016 &ndash; 12/2017</span>
+    </div>
+    <ul>
+      <li>Managed and planned work units on a farm operation, leading teams of up to 50 people.</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+
+  <div class="entry">
+    <div class="entry-row">
+      <span class="left">University of Córdoba</span>
+      <span class="right">Córdoba, Spain</span>
+    </div>
+    <div class="entry-sub">
+      <span>Master in Digital Transformation</span>
+      <span class="right">2018 &ndash; 2019</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-row">
+      <span class="left">University of Córdoba</span>
+      <span class="right">Córdoba, Spain</span>
+    </div>
+    <div class="entry-sub">
+      <span>Master in Agricultural Engineering</span>
+      <span class="right">2015 &ndash; 2017</span>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-row">
+      <span class="left">University of Extremadura</span>
+      <span class="right">Badajoz, Spain</span>
+    </div>
+    <div class="entry-sub">
+      <span>Degree in Agricultural Engineering</span>
+      <span class="right">2011 &ndash; 2015</span>
+    </div>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="entry">
+    <div class="entry-row">
+      <span class="left">fnfanalytics</span>
+      <span class="right">2020 &ndash; Present</span>
+    </div>
+    <ul>
+      <li>ERP that helps farmers be more efficient. Allows farmers to record all crop work and analyze costs in an advanced way.</li>
+    </ul>
+  </div>
+
+  <h2>Mentorship</h2>
+  <ul class="misc-list">
+    <li><strong>Python Teacher</strong> (2023 &ndash; Present): Programming, Data Structures &amp; Algorithms, Django, Data Analysis with Python.</li>
+    <li><strong>DevOps Teacher</strong> (2024 &ndash; Present): CI/CD, Automation.</li>
+  </ul>
+
+  <h2>Awards &amp; Certifications</h2>
+  <ul class="misc-list">
+    <li><strong>Copernicus Hackathon Málaga &mdash; 1st Prize</strong> (2020): App using satellite imagery to predict and visualize mosquito and jellyfish outbreaks.</li>
+    <li><strong>A3BT Business Project Competition &mdash; 1st Prize</strong> (2020): ERP that helps farmers be more efficient.</li>
+    <li><strong>Certified SAFe® 5 Agilist.</strong></li>
+  </ul>
+
+</div>
+</body>
+</html>
