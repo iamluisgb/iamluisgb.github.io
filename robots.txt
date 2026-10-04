@@ -1,0 +1,36 @@
+# robots.txt — luisgonzalezbernal.com
+# An explicit policy per kind of bot, so each one is a deliberate decision.
+# To close a group, change its "Allow: /" to "Disallow: /".
+
+# Search engines. Always allowed: blocking them drops the site from the index.
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+Allow: /
+
+# AI search and assistants fetching a page because a person asked for it.
+# Allowed: this is how the reports get cited in AI answers.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# Model-training crawlers. Allowed for now; this is the group to close
+# if the reports should stop feeding training sets.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: meta-externalagent
+Allow: /
+
+# Everyone else.
+User-agent: *
+Allow: /
+
+Sitemap: https://luisgonzalezbernal.com/reports/sitemap.xml
