@@ -33,4 +33,5 @@ Allow: /
 User-agent: *
 Allow: /
 
+Sitemap: https://luisgonzalezbernal.com/sitemap.xml
 Sitemap: https://luisgonzalezbernal.com/reports/sitemap.xml

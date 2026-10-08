@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Luis González — SRE | AI Builder</title>
-  <meta name="description" content="SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.">
+  <title>Luis González · SRE, AI Engineer y profesor</title>
+  <meta name="description" content="SRE, AI Engineer y profesor. Observabilidad e incidentes en producción, productos con IA y cursos de Python y DevOps.">
   <meta name="author" content="Luis González">
+  <link rel="canonical" href="https://luisgonzalezbernal.com/">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Luis González Bernal", "alternateName": "Luis González", "url": "https://luisgonzalezbernal.com/", "image": "https://luisgonzalezbernal.com/images/me-web.png", "jobTitle": ["Site Reliability Engineer", "AI Engineer", "Profesor de Python y DevOps"], "knowsAbout": ["Site Reliability Engineering", "Observability", "Splunk ITSI", "PagerDuty", "Kubernetes", "Python", "DevOps", "AI agents", "LangGraph"], "address": {"@type": "PostalAddress", "addressLocality": "Badajoz", "addressCountry": "ES"}, "sameAs": ["https://www.linkedin.com/in/iamluisgb/", "https://github.com/iamluisgb", "https://x.com/iamluisgb", "https://instagram.com/iamluisgb"], "founder": [{"@type": "Organization", "name": "Food & Farm Analytics", "url": "https://fnfanalytics.com/"}, {"@type": "Organization", "name": "Raiatech", "url": "https://raiatech.com/"}]}</script>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -14,16 +16,16 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Luis González — SRE | AI Builder">
-  <meta property="og:description" content="SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.">
+  <meta property="og:title" content="Luis González · SRE, AI Engineer y profesor">
+  <meta property="og:description" content="SRE, AI Engineer y profesor. Observabilidad e incidentes en producción, productos con IA y cursos de Python y DevOps.">
   <meta property="og:image" content="https://luisgonzalezbernal.com/images/me-web.png">
   <meta property="og:url" content="https://luisgonzalezbernal.com">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Luis González — SRE | AI Builder">
-  <meta name="twitter:description" content="SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.">
+  <meta name="twitter:title" content="Luis González · SRE, AI Engineer y profesor">
+  <meta name="twitter:description" content="SRE, AI Engineer y profesor. Observabilidad e incidentes en producción, productos con IA y cursos de Python y DevOps.">
   <meta name="twitter:image" content="https://luisgonzalezbernal.com/images/me-web.png">
   <meta name="twitter:site" content="@iamluisgb">
 
@@ -226,7 +228,12 @@
       </div>
       <div>
         <h1 class="text-2xl font-bold tracking-tight">Luis González</h1>
-        <p class="font-mono text-sm text-cyber-light mt-1" data-i18n="hero.tagline">SRE que construye con IA</p>
+        <p class="font-mono text-sm text-cyber-light mt-1" data-i18n="hero.tagline">SRE, AI Engineer y profesor</p>
+        <p class="text-sm text-on-surface mt-3 max-w-[340px] mx-auto leading-relaxed" data-i18n="hero.sub">Mantengo sistemas en producción, construyo con IA y lo enseño.</p>
+      </div>
+      <div class="flex gap-3 mt-1">
+        <a href="#contacto" data-umami-event="home-cta-escribeme" class="font-mono text-xs font-medium px-4 py-2.5 rounded-sm" style="background:var(--color-electric);color:#0b0f14" data-i18n="hero.cta">Escríbeme</a>
+        <a href="#ai" data-umami-event="home-cta-proyectos" class="link-card font-mono text-xs px-4 py-2.5 rounded-sm text-on-bg" data-i18n="hero.cta2">Ver proyectos</a>
       </div>
 
       <!-- Social icons -->
@@ -246,145 +253,117 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- SRE -->
     <section class="flex flex-col gap-3 animate-in delay-1">
-      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1" data-i18n="section.projects">// Proyectos</h2>
-
-      <a href="https://iamluisgb.github.io/arete" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
-        <div class="w-9 h-9 rounded-sm overflow-hidden flex-shrink-0">
-          <img src="images/arete-icon.png" alt="Areté" class="w-full h-full object-cover">
+      <h2 id="sre" class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1 scroll-mt-6" data-i18n="section.sre">// SRE</h2>
+      <div class="rounded-sm px-4 py-4 flex items-center gap-4" style="background:var(--color-card-bg)">
+        <span class="w-9 flex-shrink-0 text-center text-cyber-light text-lg">&#9678;</span>
+        <div>
+          <p class="font-semibold text-sm" data-i18n="sre.title">Observabilidad e incidentes en el sector farmacéutico</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="sre.desc">Splunk ITSI y PagerDuty como columna vertebral: servicios, alertas y guardias en producción.</p>
         </div>
+      </div>
+      <a href="cv.html" data-umami-event="home-cv" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="w-9 flex-shrink-0 text-center text-cyber-light text-lg">&#9776;</span>
+        <div>
+          <p class="font-semibold text-sm">CV</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="sre.cv">Experiencia completa — también en PDF</p>
+        </div>
+        <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </section>
+
+    <!-- AI ENGINEER -->
+    <section class="flex flex-col gap-3 animate-in delay-2">
+      <h2 id="ai" class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1 scroll-mt-6" data-i18n="section.ai">// AI Engineer</h2>
+      <a href="https://fnfanalytics.com/" target="_blank" rel="noopener" data-umami-event="home-fnf" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <div class="w-9 h-9 rounded-sm overflow-hidden flex-shrink-0 bg-white flex items-center justify-center"><img src="images/fnf-icon-cropped.png" alt="Food &amp; Farm Analytics" class="w-full h-full object-contain p-1"></div>
+        <div>
+          <p class="font-semibold text-sm">Food &amp; Farm Analytics</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="ai.fnf">Partes de campo por voz, validados contra el registro oficial y convertidos en costes por parcela</p>
+        </div>
+        <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+      <a href="/reports/" data-umami-event="home-reports" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="w-9 flex-shrink-0 text-center text-cyber-light text-lg">&#9638;</span>
+        <div>
+          <p class="font-semibold text-sm">AI Reports</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="ai.reports">Pipeline que investiga, redacta y verifica fuentes cada día. Los textos los escribe la IA.</p>
+        </div>
+        <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+      <a href="https://bookreader.raiatech.com/" target="_blank" rel="noopener" data-umami-event="home-bookreader" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <div class="w-9 h-9 rounded-sm overflow-hidden flex-shrink-0"><img src="images/bookreader-icon.png" alt="Bookreader" class="w-full h-full object-cover"></div>
+        <div>
+          <p class="font-semibold text-sm">Bookreader</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="ai.bookreader">Lector de libros en el navegador: se abre al momento y lo que lees se queda contigo</p>
+        </div>
+        <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+      <a href="https://arete.raiatech.com/" target="_blank" rel="noopener" data-umami-event="home-arete" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <div class="w-9 h-9 rounded-sm overflow-hidden flex-shrink-0"><img src="images/arete-icon.png" alt="Areté" class="w-full h-full object-cover"></div>
         <div>
           <p class="font-semibold text-sm">Areté</p>
           <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="project.arete.desc">Tu app de entrenamiento personalizable. Fuerza, running o ambos.</p>
         </div>
         <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
+    </section>
 
-      <a href="https://fnfanalytics.com/" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
-        <div class="w-9 h-9 rounded-sm overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
-          <img src="images/fnf-icon-cropped.png" alt="Food &amp; Farm Analytics" class="w-full h-full object-contain p-1">
-        </div>
+    <!-- PROFESOR -->
+    <section class="flex flex-col gap-3 animate-in delay-3">
+      <h2 id="profesor" class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1 scroll-mt-6" data-i18n="section.teach">// Profesor</h2>
+      <a href="cursos.html" data-umami-event="home-cursos" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="w-9 flex-shrink-0 text-center text-cyber-light text-lg">&#10094;/&#10095;</span>
         <div>
-          <p class="font-semibold text-sm">Food & Farm Analytics</p>
-          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="project.fnf.desc">El centro de decisiones de la explotación agrícola — Premio Emilio Botín 2020</p>
+          <p class="font-semibold text-sm" data-i18n="teach.title">Cursos de Python y DevOps</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="teach.desc">Python, Django, CI/CD, Docker y Terraform, con los repos de cada clase</p>
         </div>
         <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
     </section>
 
-    <!-- CONTENT -->
-    <section class="flex flex-col gap-3 animate-in delay-2">
-      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1" data-i18n="section.content">// Contenido</h2>
-
-      <a href="https://www.linkedin.com/in/iamluisgb/recent-activity/all/" target="_blank" rel="noopener" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
-        <span class="text-cyber-light text-lg">&#9998;</span>
+    <!-- CONTACTO -->
+    <section class="flex flex-col gap-3 animate-in delay-4">
+      <h2 id="contacto" class="font-mono text-xs text-on-surface uppercase tracking-widest mb-1 scroll-mt-6" data-i18n="section.contact">// Trabajemos juntos</h2>
+      <a href="mailto:luisgonzalezb93@gmail.com?subject=Consultor%C3%ADa" data-umami-event="home-mail-consultoria" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="w-9 flex-shrink-0 text-center text-cyber-light text-lg">&#9881;</span>
         <div>
-          <p class="font-semibold text-sm" data-i18n="content.linkedin.title">Posts en LinkedIn</p>
-          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="content.linkedin.desc">SRE, IA, observabilidad y reinvención profesional</p>
+          <p class="font-semibold text-sm" data-i18n="contact.consult.title">Consultoría</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="contact.consult.desc">SRE, observabilidad y sistemas con IA para tu equipo</p>
         </div>
         <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
-
-      <a href="cursos.html" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
-        <span class="text-cyber-light text-lg">&#10094;/&#10095;</span>
+      <a href="mailto:luisgonzalezb93@gmail.com?subject=Colaboraci%C3%B3n" data-umami-event="home-mail-colaboracion" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="w-9 flex-shrink-0 text-center text-cyber-light text-lg">&#8644;</span>
         <div>
-          <p class="font-semibold text-sm" data-i18n="content.courses.title">Cursos Python & DevOps</p>
-          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="content.courses.desc">Repos de clases — Python, Django, CI/CD, Docker</p>
+          <p class="font-semibold text-sm" data-i18n="contact.collab.title">Colaboraciones</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="contact.collab.desc">Proyectos, contenido o charlas</p>
         </div>
         <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
-
-      <a href="cv.html" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
-        <span class="text-cyber-light text-lg">&#9776;</span>
+      <a href="mailto:luisgonzalezb93@gmail.com?subject=Clases" data-umami-event="home-mail-clases" class="link-card rounded-sm px-4 py-4 flex items-center gap-4">
+        <span class="w-9 flex-shrink-0 text-center text-cyber-light text-lg">&#9998;</span>
         <div>
-          <p class="font-semibold text-sm" data-i18n="content.cv.title">CV / Resume</p>
-          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="content.cv.desc">SRE · DevOps · Automation — also as PDF</p>
+          <p class="font-semibold text-sm" data-i18n="contact.classes.title">Clases y formación</p>
+          <p class="font-mono text-xs text-on-surface mt-0.5" data-i18n="contact.classes.desc">Para personas o equipos: Python, DevOps e IA aplicada</p>
         </div>
         <svg class="ml-auto text-on-surface flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
-    </section>
-
-    <!-- TECH STACK -->
-    <section class="flex flex-col gap-4 animate-in delay-3">
-      <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest" data-i18n="section.stack">// Stack</h2>
-
-      <div>
-        <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2" data-i18n="stack.observability">Observabilidad & Incident Management</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Splunk ITSI</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">PagerDuty</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Prometheus</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">EFK Stack</span>
-        </div>
-      </div>
-
-      <div>
-        <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Infra & DevOps</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Kubernetes</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Docker</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">AWS</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Linux</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Ansible</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Terraform</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Rundeck</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">HashiCorp Vault</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">GitLab Pipelines</span>
-        </div>
-      </div>
-
-      <div>
-        <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2" data-i18n="stack.dev">Desarrollo</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Python</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">FastAPI</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Django</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">JavaScript</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">PostgreSQL</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">MySQL</span>
-        </div>
-      </div>
-
-      <div>
-        <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">AI & Agentes</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">LangGraph</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Claude Code</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">NumPy</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Pandas</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">scikit-learn</span>
-        </div>
-      </div>
-
-      <div>
-        <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Tooling</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">Git</span>
-          <span class="chip font-mono text-xs text-on-surface px-3 py-1.5 rounded-md">ServiceNow</span>
-        </div>
-      </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="glass-panel rounded-sm px-5 py-5 animate-in delay-4">
+    <section class="glass-panel rounded-sm px-5 py-5 animate-in delay-5">
       <h2 class="font-mono text-xs text-on-surface uppercase tracking-widest mb-3" data-i18n="section.about">// Sobre mí</h2>
-      <p class="text-sm leading-relaxed text-on-bg" data-i18n="about.text1">
-        SRE en el sector farmacéutico. Gestiono Splunk ITSI y PagerDuty como columna vertebral de observabilidad. Construyendo agentes de AI.
-      </p>
-      <p class="text-sm leading-relaxed text-on-bg mt-3" data-i18n="about.text2">
-        Profesor de Python y DevOps. Builder de Areté y fnfanalytics.
-      </p>
-      <p class="text-sm leading-relaxed text-on-bg mt-3 italic text-on-surface" data-i18n="about.text3">
-        Sistema sobre motivación.
-      </p>
+      <p class="text-sm leading-relaxed text-on-bg" data-i18n="about.text1">SRE en el sector farmacéutico. Construyo productos con IA, de los partes de campo de FnF a pipelines que se verifican solos, y enseño Python y DevOps.</p>
+      <p class="text-sm leading-relaxed text-on-bg mt-3 italic text-on-surface" data-i18n="about.text3">Sistema sobre motivación.</p>
     </section>
 
     <!-- FOOTER -->
     <footer class="text-center flex flex-col gap-2 pt-4 animate-in delay-5">
-      <a href="mailto:luisgonzalezb93@gmail.com" class="font-mono text-xs text-cyber-light hover:text-electric transition-colors">luisgonzalezb93@gmail.com</a>
+      <a href="mailto:luisgonzalezb93@gmail.com" data-umami-event="home-mail" class="font-mono text-xs text-cyber-light hover:text-electric transition-colors">luisgonzalezb93@gmail.com</a>
       <p class="font-mono text-xs text-on-surface" data-i18n="footer.location">Badajoz, España</p>
-      <p class="font-mono text-[10px] text-on-surface mt-4 opacity-50">v2.0</p>
+      <p class="font-mono text-[10px] text-on-surface mt-4 opacity-50">v3.0</p>
     </footer>
 
   </main>
@@ -392,53 +371,69 @@
   <script>
     // --- i18n ---
     var translations = {
-      es: {
-        'hero.tagline': 'SRE que construye con IA',
-        'section.projects': '// Proyectos',
-        'project.arete.desc': 'Tu app de entrenamiento personalizable. Fuerza, running o ambos.',
-        'project.fnf.desc': 'El centro de decisiones de la explotación agrícola — Premio Emilio Botín 2020',
-        'section.content': '// Contenido',
-        'content.linkedin.title': 'Posts en LinkedIn',
-        'content.linkedin.desc': 'SRE, IA, observabilidad y reinvención profesional',
-        'content.courses.title': 'Cursos Python & DevOps',
-        'content.courses.desc': 'Repos de clases — Python, Django, CI/CD, Docker',
-        'content.cv.title': 'CV / Resume',
-        'content.cv.desc': 'SRE · DevOps · Automation — también en PDF',
-        'section.stack': '// Stack',
-        'stack.observability': 'Observabilidad & Incident Management',
-        'stack.dev': 'Desarrollo',
-        'section.about': '// Sobre mí',
-        'about.text1': 'SRE en el sector farmacéutico. Gestiono Splunk ITSI y PagerDuty como columna vertebral de observabilidad. Construyendo agentes de AI.',
-        'about.text2': 'Profesor de Python y DevOps. Builder de Areté y fnfanalytics.',
-        'about.text3': 'Sistema sobre motivación.',
-        'footer.location': 'Badajoz, España',
-        'meta.description': 'SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.',
-        'og.description': 'SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.',
-        'twitter.description': 'SRE que construye con IA. DevOps, observabilidad, agentes inteligentes y atletismo híbrido.'
+      "es": {
+        "hero.tagline": "SRE, AI Engineer y profesor",
+        "hero.sub": "Mantengo sistemas en producción, construyo con IA y lo enseño.",
+        "hero.cta": "Escríbeme",
+        "hero.cta2": "Ver proyectos",
+        "section.sre": "// SRE",
+        "sre.title": "Observabilidad e incidentes en el sector farmacéutico",
+        "sre.desc": "Splunk ITSI y PagerDuty como columna vertebral: servicios, alertas y guardias en producción.",
+        "sre.cv": "Experiencia completa — también en PDF",
+        "section.ai": "// AI Engineer",
+        "ai.fnf": "Partes de campo por voz, validados contra el registro oficial y convertidos en costes por parcela",
+        "ai.reports": "Pipeline que investiga, redacta y verifica fuentes cada día. Los textos los escribe la IA.",
+        "ai.bookreader": "Lector de libros en el navegador: se abre al momento y lo que lees se queda contigo",
+        "project.arete.desc": "Tu app de entrenamiento personalizable. Fuerza, running o ambos.",
+        "section.teach": "// Profesor",
+        "teach.title": "Cursos de Python y DevOps",
+        "teach.desc": "Python, Django, CI/CD, Docker y Terraform, con los repos de cada clase",
+        "section.contact": "// Trabajemos juntos",
+        "contact.consult.title": "Consultoría",
+        "contact.consult.desc": "SRE, observabilidad y sistemas con IA para tu equipo",
+        "contact.collab.title": "Colaboraciones",
+        "contact.collab.desc": "Proyectos, contenido o charlas",
+        "contact.classes.title": "Clases y formación",
+        "contact.classes.desc": "Para personas o equipos: Python, DevOps e IA aplicada",
+        "section.about": "// Sobre mí",
+        "about.text1": "SRE en el sector farmacéutico. Construyo productos con IA, de los partes de campo de FnF a pipelines que se verifican solos, y enseño Python y DevOps.",
+        "about.text3": "Sistema sobre motivación.",
+        "footer.location": "Badajoz, España",
+        "meta.description": "SRE, AI Engineer y profesor. Observabilidad e incidentes en producción, productos con IA y cursos de Python y DevOps.",
+        "og.description": "SRE, AI Engineer y profesor. Observabilidad e incidentes en producción, productos con IA y cursos de Python y DevOps.",
+        "twitter.description": "SRE, AI Engineer y profesor. Observabilidad e incidentes en producción, productos con IA y cursos de Python y DevOps."
       },
-      en: {
-        'hero.tagline': 'SRE who builds with AI',
-        'section.projects': '// Projects',
-        'project.arete.desc': 'Your customizable training app. Strength, running, or both.',
-        'project.fnf.desc': 'The decision hub for farm operations — Emilio Botín Award 2020',
-        'section.content': '// Content',
-        'content.linkedin.title': 'LinkedIn Posts',
-        'content.linkedin.desc': 'SRE, AI, observability & career reinvention',
-        'content.courses.title': 'Python & DevOps Courses',
-        'content.courses.desc': 'Course repos — Python, Django, CI/CD, Docker',
-        'content.cv.title': 'CV / Resume',
-        'content.cv.desc': 'SRE · DevOps · Automation — also as PDF',
-        'section.stack': '// Stack',
-        'stack.observability': 'Observability & Incident Management',
-        'stack.dev': 'Development',
-        'section.about': '// About',
-        'about.text1': 'SRE in pharma. I manage Splunk ITSI and PagerDuty as the observability backbone. Building AI agents.',
-        'about.text2': 'Python and DevOps teacher. Builder of Areté and fnfanalytics.',
-        'about.text3': 'System over motivation.',
-        'footer.location': 'Badajoz, Spain',
-        'meta.description': 'SRE who builds with AI. DevOps, observability, intelligent agents and hybrid athletics.',
-        'og.description': 'SRE who builds with AI. DevOps, observability, intelligent agents and hybrid athletics.',
-        'twitter.description': 'SRE who builds with AI. DevOps, observability, intelligent agents and hybrid athletics.'
+      "en": {
+        "hero.tagline": "SRE, AI Engineer and teacher",
+        "hero.sub": "I keep systems running in production, build with AI and teach it.",
+        "hero.cta": "Get in touch",
+        "hero.cta2": "See projects",
+        "section.sre": "// SRE",
+        "sre.title": "Observability and incident response in pharma",
+        "sre.desc": "Splunk ITSI and PagerDuty as the backbone: services, alerts and on-call in production.",
+        "sre.cv": "Full experience — also as PDF",
+        "section.ai": "// AI Engineer",
+        "ai.fnf": "Voice field reports, checked against the official registry and turned into costs per plot",
+        "ai.reports": "A pipeline that researches, writes and checks its sources every day. The text is written by AI.",
+        "ai.bookreader": "A book reader in the browser: opens instantly and your reading stays with you",
+        "project.arete.desc": "Your customizable training app. Strength, running, or both.",
+        "section.teach": "// Teacher",
+        "teach.title": "Python and DevOps courses",
+        "teach.desc": "Python, Django, CI/CD, Docker and Terraform, with the repo for each class",
+        "section.contact": "// Let's work together",
+        "contact.consult.title": "Consulting",
+        "contact.consult.desc": "SRE, observability and AI systems for your team",
+        "contact.collab.title": "Collaborations",
+        "contact.collab.desc": "Projects, content or talks",
+        "contact.classes.title": "Classes and training",
+        "contact.classes.desc": "For individuals or teams: Python, DevOps and applied AI",
+        "section.about": "// About",
+        "about.text1": "SRE in pharma. I build AI products, from FnF field reports to pipelines that check themselves, and I teach Python and DevOps.",
+        "about.text3": "System over motivation.",
+        "footer.location": "Badajoz, Spain",
+        "meta.description": "SRE, AI Engineer and teacher. Observability and incident response in production, AI products, and Python and DevOps courses.",
+        "og.description": "SRE, AI Engineer and teacher. Observability and incident response in production, AI products, and Python and DevOps courses.",
+        "twitter.description": "SRE, AI Engineer and teacher. Observability and incident response in production, AI products, and Python and DevOps courses."
       }
     };
 
