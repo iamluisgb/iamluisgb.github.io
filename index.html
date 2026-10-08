@@ -45,12 +45,14 @@
       --bg: #10141a; --surface: #1c2026; --surface-2: #262a31; --line: #2c333b; --line-2: #3b4550;
       --ink: #dfe2eb; --soft: #9fb0a6; --electric: #00ff9d; --electric-ink: #0b0f14; --cyber: #97cbff;
       --warn: #f2b84b; --bad: #ff6b6b; --dot: rgba(53, 57, 64, .35);
+      --iso-t: #3a414b; --iso-l: #2a3038; --iso-r: #20252c; --iso-borde: #4a5562;
       --mono: 'JetBrains Mono', ui-monospace, monospace; --sans: 'Inter', system-ui, sans-serif; --display: 'Space Grotesk', 'Inter', sans-serif;
     }
     :root.light {
       --bg: #f5f5f7; --surface: #ffffff; --surface-2: #eeeef1; --line: #dcdce2; --line-2: #c5c5cd;
       --ink: #1a1d24; --soft: #55606e; --electric: #00a866; --electric-ink: #ffffff; --cyber: #1e5080;
       --warn: #b7791f; --bad: #c53030; --dot: rgba(0, 0, 0, .06);
+      --iso-t: #ffffff; --iso-l: #e6e6ec; --iso-r: #d2d2da; --iso-borde: #b9b9c4;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -104,17 +106,28 @@
     .sim-st.warn { color: var(--warn); } .sim-st.bad { color: var(--bad); }
     @keyframes latido { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 60%, transparent); } 70%, 100% { box-shadow: 0 0 0 7px transparent; } }
     #sim-map { display: block; width: 100%; height: auto; }
-    #sim-map .edge { stroke: var(--line-2); stroke-width: 1.4; transition: stroke .4s; }
-    #sim-map .edge.bad { stroke: color-mix(in srgb, var(--bad) 70%, transparent); }
-    #sim-map .pulse { fill: var(--electric); }
-    #sim-map .pulse.bad { fill: var(--bad); }
-    #sim-map .node rect { fill: var(--surface-2); stroke: var(--line-2); stroke-width: 1.2; transition: fill .4s, stroke .4s; }
-    #sim-map .node text { fill: var(--ink); font-family: var(--mono); font-size: 10.5px; }
-    #sim-map .node .dot { fill: var(--electric); transition: fill .4s; }
-    #sim-map .node.warn rect { stroke: var(--warn); } #sim-map .node.warn .dot { fill: var(--warn); }
-    #sim-map .node.bad rect { stroke: var(--bad); fill: color-mix(in srgb, var(--bad) 14%, var(--surface-2)); } #sim-map .node.bad .dot { fill: var(--bad); }
-    #sim-map .node { cursor: pointer; }
-    #sim-map .node:hover rect { stroke: var(--electric); }
+    #sim-map .edge { stroke: var(--line-2); stroke-width: 1.6; stroke-dasharray: 4 3; transition: stroke .4s; }
+    #sim-map .edge.bad { stroke: color-mix(in srgb, var(--bad) 75%, transparent); }
+    #sim-map .pulse { fill: var(--electric); filter: drop-shadow(0 0 3px var(--electric)); }
+    #sim-map .pulse.bad { fill: var(--bad); filter: drop-shadow(0 0 3px var(--bad)); }
+    #sim-map .node { cursor: pointer; outline: none; }
+    #sim-map .node polygon { stroke: var(--iso-borde); stroke-width: 1; stroke-linejoin: round; transition: fill .4s; }
+    #sim-map .cara-t { fill: var(--iso-t); } #sim-map .cara-l { fill: var(--iso-l); } #sim-map .cara-r { fill: var(--iso-r); }
+    #sim-map .ranura { stroke: var(--iso-borde); stroke-width: 1.2; }
+    #sim-map .node .dot { fill: var(--electric); filter: drop-shadow(0 0 4px var(--electric)); transition: fill .4s; }
+    #sim-map .rotulos text { fill: var(--ink); font-family: var(--mono); font-size: 12.5px; paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; cursor: pointer; }
+    #sim-map .rotulos text.bad { fill: var(--bad); }
+    #sim-map .node.warn .cara-t { fill: color-mix(in srgb, var(--warn) 30%, var(--iso-t)); }
+    #sim-map .node.warn .dot { fill: var(--warn); filter: drop-shadow(0 0 4px var(--warn)); }
+    #sim-map .node.bad .cara-t { fill: color-mix(in srgb, var(--bad) 45%, var(--iso-t)); }
+    #sim-map .node.bad .cara-l { fill: color-mix(in srgb, var(--bad) 30%, var(--iso-l)); }
+    #sim-map .node.bad .cara-r { fill: color-mix(in srgb, var(--bad) 22%, var(--iso-r)); }
+    #sim-map .node.bad .dot { fill: var(--bad); filter: drop-shadow(0 0 5px var(--bad)); }
+    #sim-map .node.bad .caja { animation: temblor .28s infinite; }
+    #sim-map .node.destello .caja { animation: destello .9s ease-out; }
+    #sim-map .node:hover .cara-t, #sim-map .node:focus .cara-t { fill: color-mix(in srgb, var(--electric) 22%, var(--iso-t)); }
+    @keyframes temblor { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-1.2px, .4px); } 75% { transform: translate(1.2px, -.4px); } }
+    @keyframes destello { 0% { filter: drop-shadow(0 0 0 var(--electric)); } 30% { filter: drop-shadow(0 0 10px var(--electric)); } 100% { filter: drop-shadow(0 0 0 transparent); } }
     .sim-kpis { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .sim-kpis > div { padding: 10px 14px; display: grid; gap: 4px; }
     .sim-kpis > div + div { border-left: 1px solid var(--line); }
@@ -125,7 +138,7 @@
     .budget i.bad { background: var(--bad); }
     #k-spark { width: 100%; height: 22px; }
     #k-spark path { fill: none; stroke: var(--cyber); stroke-width: 1.5; }
-    .sim-low { display: grid; grid-template-columns: 1fr 1fr; min-height: 168px; }
+    .sim-low { display: grid; grid-template-columns: 1fr 1fr; min-height: 258px; }  /* alto final reservado: la tarjeta no crece mientras se llena */
     .sim-log { list-style: none; margin: 0; padding: 10px 14px; font-family: var(--mono); font-size: 10.5px; line-height: 1.5; display: grid; align-content: start; gap: 4px; color: var(--soft); }
     .sim-log li { opacity: 0; transform: translateY(4px); transition: opacity .35s, transform .35s; }
     .sim-log li.on { opacity: 1; transform: none; }
@@ -139,13 +152,12 @@
     .sim-ia .ev::before { content: '✓ '; color: var(--electric); }
     .sim-ia .causa { font-weight: 600; }
     .sim-ia .causa em { font-style: normal; color: var(--electric); }
-    .sim-fin { position: absolute; left: 50%; top: 92px; transform: translate(-50%, 6px); background: var(--electric); color: var(--electric-ink); font-family: var(--mono); font-size: 12px; font-weight: 500; padding: 7px 12px; border-radius: 4px; opacity: 0; transition: opacity .4s, transform .4s; white-space: nowrap; pointer-events: none; }
-    .sim-fin.on { opacity: 1; transform: translate(-50%, 0); }
+    .sim-ia .fin { justify-self: start; margin-top: 4px; background: var(--electric); color: var(--electric-ink); font-family: var(--mono); font-size: 11px; font-weight: 500; padding: 5px 9px; border-radius: 4px; }
     .sim-tip { position: absolute; pointer-events: none; background: var(--bg); border: 1px solid var(--line-2); border-radius: 4px; padding: 6px 9px; font-family: var(--mono); font-size: 10.5px; line-height: 1.45; opacity: 0; transition: opacity .15s; z-index: 2; white-space: nowrap; }
     .sim-tip.on { opacity: 1; }
     .sim-tip b { display: block; color: var(--ink); font-weight: 500; }
     .sim-tip span { color: var(--soft); }
-    @media (max-width: 520px) { .sim-low { grid-template-columns: 1fr; } .sim-ia { border-left: 0; border-top: 1px solid var(--line); } }
+    @media (max-width: 520px) { .sim-low { grid-template-columns: 1fr; min-height: 0; } .sim-log { min-height: 186px; } .sim-ia { border-left: 0; border-top: 1px solid var(--line); min-height: 214px; } }
 
     /* pruebas */
     .pruebas { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 55%, transparent); }
@@ -263,7 +275,7 @@
           <span class="label" data-i18n="sim.titulo">Simulación · producción</span>
           <span class="sim-st" id="sim-st"><i></i><span id="sim-st-t">todo en orden</span></span>
         </div>
-        <svg id="sim-map" viewBox="0 0 420 200" role="img" aria-hidden="true"></svg>
+        <svg id="sim-map" viewBox="-180 -60 520 260" role="img" aria-hidden="true"></svg>
         <div class="sim-kpis">
           <div><span class="label">SLO · <span data-i18n="sim.presupuesto">presupuesto de error</span></span><b id="k-slo">99,97 %</b><span class="budget"><i id="k-budget"></i></span></div>
           <div><span class="label" data-i18n="sim.latencia">latencia p95</span><b id="k-lat">180 ms</b><svg id="k-spark" viewBox="0 0 120 22" preserveAspectRatio="none"><path id="k-path"/></svg></div>
@@ -274,7 +286,6 @@
             <span class="label" data-i18n="sim.ia">IA · diagnóstico</span>
           </div>
         </div>
-        <div class="sim-fin" id="sim-fin"></div>
         <div class="sim-tip" id="sim-tip"></div>
       </figure>
     </div>
@@ -387,7 +398,7 @@
   </div>
 </footer>
 
-<script src="assets/incidente.js?v=20261008c" defer></script>
+<script src="assets/incidente.js?v=20261008h" defer></script>
 <script>
 (function () {
   var T = {
