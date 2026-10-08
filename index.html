@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-VEQm7u2ssS3vXs5A/tinyJud816uiYQyLNJkb7vIiY4='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloud.umami.is; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Luis González · SRE, AI Engineer y profesor</title>
   <meta name="description" content="SRE, AI Engineer y profesor. Mantengo sistemas en producción, construyo productos con IA y enseño Python y DevOps.">
@@ -15,18 +17,22 @@
 
   <meta property="og:title" content="Luis González · SRE, AI Engineer y profesor">
   <meta property="og:description" content="Mantengo sistemas en producción, construyo productos con IA y enseño Python y DevOps.">
-  <meta property="og:image" content="https://luisgonzalezbernal.com/images/me-web.png">
+  <meta property="og:image" content="https://luisgonzalezbernal.com/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Luis González, SRE, AI Engineer y profesor">
   <meta property="og:url" content="https://luisgonzalezbernal.com/">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://luisgonzalezbernal.com/images/og.jpg">
   <meta name="twitter:site" content="@iamluisgb">
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Luis González Bernal","alternateName":"Luis González","url":"https://luisgonzalezbernal.com/","image":"https://luisgonzalezbernal.com/images/me-web.png","jobTitle":["Site Reliability Engineer","AI Engineer","Profesor de Python y DevOps"],"knowsAbout":["Site Reliability Engineering","Observability","Incident management","Splunk ITSI","PagerDuty","Rundeck","Kubernetes","Python","DevOps","Machine learning","AI agents","LangGraph"],"award":["Premio Emilio Botín 2020 (ceiA3)","Copernicus Hackathon Málaga 2020, primer premio","A3BT Business Project Competition 2020, primer premio"],"address":{"@type":"PostalAddress","addressLocality":"Badajoz","addressCountry":"ES"},"sameAs":["https://www.linkedin.com/in/iamluisgb/","https://github.com/iamluisgb","https://x.com/iamluisgb","https://instagram.com/iamluisgb"],"founder":[{"@type":"Organization","name":"Food & Farm Analytics","url":"https://fnfanalytics.com/"},{"@type":"Organization","name":"Raiatech","url":"https://raiatech.com/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://luisgonzalezbernal.com/#persona","name":"Luis González Bernal","alternateName":"Luis González","url":"https://luisgonzalezbernal.com/","image":"https://luisgonzalezbernal.com/images/me-web.png","jobTitle":["Site Reliability Engineer","AI Engineer","Profesor de Python y DevOps"],"knowsAbout":["Site Reliability Engineering","Observability","Incident management","Splunk ITSI","PagerDuty","Rundeck","Kubernetes","Python","DevOps","Machine learning","AI agents","LangGraph"],"award":["Premio Emilio Botín 2020 (ceiA3)","Copernicus Hackathon Málaga 2020, primer premio","A3BT Business Project Competition 2020, primer premio"],"address":{"@type":"PostalAddress","addressLocality":"Badajoz","addressCountry":"ES"},"sameAs":["https://www.linkedin.com/in/iamluisgb/","https://github.com/iamluisgb","https://x.com/iamluisgb","https://instagram.com/iamluisgb"],"founder":[{"@type":"Organization","name":"Food & Farm Analytics","url":"https://fnfanalytics.com/"},{"@type":"Organization","name":"Raiatech","url":"https://raiatech.com/"}]},{"@type":"WebSite","@id":"https://luisgonzalezbernal.com/#web","url":"https://luisgonzalezbernal.com/","name":"Luis González","inLanguage":"es","author":{"@id":"https://luisgonzalezbernal.com/#persona"}}]}</script>
 
   <!-- Umami Analytics (script self-hosteado, reporta a cloud.umami.is) -->
   <script defer src="/u/s.js" data-website-id="08c1619b-4bb8-471b-9dc9-9b6cda88e8ae" data-host-url="https://cloud.umami.is" data-domains="luisgonzalezbernal.com"></script>
 
-  <!-- tema antes de pintar, para que no parpadee -->
+  <!-- tema antes de pintar, para que no parpadee. Si lo cambias, recalcula su sha256 en la CSP de arriba -->
   <script>
     (function () {
       try {
@@ -253,7 +259,7 @@
     <div class="wrap">
       <div>
         <div class="quien">
-          <img src="images/me-web.png" alt="Luis González" width="56" height="56">
+          <img src="images/me-112.webp" alt="Luis González" width="56" height="56">
           <span class="label" data-i18n-html="hero.label">SRE · <b>AI Engineer</b> · profesor</span>
         </div>
         <h1 data-i18n-html="hero.h1">Sistemas que no se caen. <em>IA que resuelve.</em></h1>
@@ -309,19 +315,19 @@
       </div>
       <div class="proyectos">
         <a class="card rev" href="https://fnfanalytics.com/" target="_blank" rel="noopener" data-umami-event="web-fnf">
-          <img src="images/proyectos/fnf.webp" alt="Portada de Food &amp; Farm Analytics" width="800" height="500" loading="lazy">
+          <img src="images/proyectos/fnf.webp" srcset="images/proyectos/fnf-480.webp 480w, images/proyectos/fnf.webp 800w" sizes="(max-width: 760px) calc(100vw - 48px), 530px" alt="Portada de Food &amp; Farm Analytics" width="800" height="500" loading="lazy">
           <div class="txt"><span class="label" data-i18n="fnf.tag">Agro · Premio Emilio Botín 2020</span><h3>Food &amp; Farm Analytics</h3><p data-i18n="fnf.p">El agricultor dicta lo que ha hecho y la IA lo convierte en una operación validada contra el registro oficial, con su coste por parcela.</p></div>
         </a>
         <a class="card rev" href="/reports/" data-umami-event="web-reports">
-          <img src="images/proyectos/reports.webp" alt="Portada de AI Reports" width="800" height="500" loading="lazy">
+          <img src="images/proyectos/reports.webp" srcset="images/proyectos/reports-480.webp 480w, images/proyectos/reports.webp 800w" sizes="(max-width: 760px) calc(100vw - 48px), 530px" alt="Portada de AI Reports" width="800" height="500" loading="lazy">
           <div class="txt"><span class="label" data-i18n="rep.tag">Pipeline de agentes · generado con IA</span><h3>AI Reports</h3><p data-i18n="rep.p">Un pipeline que investiga, redacta y verifica sus fuentes. Publica un informe cada día desde mayo. Los textos los escribe la IA.</p></div>
         </a>
         <a class="card rev" href="https://bookreader.raiatech.com/" target="_blank" rel="noopener" data-umami-event="web-bookreader">
-          <img src="images/proyectos/bookreader.webp" alt="Portada de Bookreader" width="800" height="500" loading="lazy">
+          <img src="images/proyectos/bookreader.webp" srcset="images/proyectos/bookreader-480.webp 480w, images/proyectos/bookreader.webp 800w" sizes="(max-width: 760px) calc(100vw - 48px), 530px" alt="Portada de Bookreader" width="800" height="500" loading="lazy">
           <div class="txt"><span class="label" data-i18n="br.tag">Raiatech · app web</span><h3>Bookreader</h3><p data-i18n="br.p">Un lector con IA que te explica lo que lees y te ayuda a recordarlo. Sin cuenta, en el navegador.</p></div>
         </a>
         <a class="card rev" href="https://arete.raiatech.com/" target="_blank" rel="noopener" data-umami-event="web-arete">
-          <img src="images/proyectos/arete.webp" alt="Portada de Areté" width="800" height="500" loading="lazy">
+          <img src="images/proyectos/arete.webp" srcset="images/proyectos/arete-480.webp 480w, images/proyectos/arete.webp 800w" sizes="(max-width: 760px) calc(100vw - 48px), 530px" alt="Portada de Areté" width="800" height="500" loading="lazy">
           <div class="txt"><span class="label" data-i18n="ar.tag">Raiatech · app web</span><h3>Areté</h3><p data-i18n="ar.p">Entrenamiento de fuerza y resistencia: siete dominios medidos con tests reales y un plan que se adapta.</p></div>
         </a>
       </div>
@@ -399,85 +405,6 @@
 </footer>
 
 <script src="assets/incidente.js?v=20261008h" defer></script>
-<script>
-(function () {
-  var T = {
-    es: {},
-    en: {
-      'n1': '99.97%', 'n2': '−90%', 'nav.proyectos': 'Projects', 'nav.profesor': 'Teaching', 'nav.contacto': 'Contact',
-      'hero.label': 'SRE · <b>AI Engineer</b> · teacher', 'hero.h1': 'Systems that stay up. <em>AI that fixes.</em>',
-      'hero.sub': 'I keep systems running in production, build AI products and teach Python and DevOps. Based in Badajoz, working anywhere.',
-      'hero.cta': 'Get in touch', 'hero.cta2': 'See projects',
-      'sim.titulo': 'Simulation · production', 'sim.presupuesto': 'error budget', 'sim.latencia': 'p95 latency', 'sim.ia': 'AI · diagnosis',
-      'p1': 'availability on a platform running ~3,000 automated jobs a day', 'p2': 'time to assign incidents, with a machine learning classifier',
-      'p3n': '3 awards', 'p3': 'in 2020: Emilio Botín, Copernicus Hackathon and A3BT', 'p4n': 'since 2023', 'p4': 'teaching Python, data analysis and DevOps',
-      'proy.h2': 'AI products, in production', 'proy.p': 'I build them end to end: the product, the infrastructure and the AI.',
-      'fnf.tag': 'Agri · Emilio Botín Award 2020', 'fnf.p': 'Farmers dictate what they did and AI turns it into an operation checked against the official registry, with its cost per plot.',
-      'rep.tag': 'Agent pipeline · AI-generated', 'rep.p': 'A pipeline that researches, writes and checks its sources. One report a day since May. The text is written by AI.',
-      'br.tag': 'Raiatech · web app', 'br.p': 'An AI reader that explains what you read and helps you remember it. No account, in your browser.',
-      'ar.tag': 'Raiatech · web app', 'ar.p': 'Strength and endurance training: seven domains measured with real tests and a plan that adapts.',
-      'sre.h2': 'Stable production in pharma', 'sre.p': 'Since 2022 I lead an SRE team. I make sure systems hold up, that we find out before users do, and that repetitive work gets automated.',
-      'sre.l1': 'Observability and incident response with Splunk ITSI and PagerDuty', 'sre.l2': 'Automation with Rundeck, Ansible and Python',
-      'sre.l3': 'CI/CD and Kubernetes, with measured availability targets', 'sre.l4': 'AI for operations: classify, prioritise and diagnose', 'sre.cv': 'See the full CV',
-      'c1.h': 'Automation platform', 'c1.p': 'About 3,000 jobs a day, deployed on Kubernetes with Ansible and Jenkins. Custom plugins for Splunk, ServiceNow and Vault.',
-      'c2.p': 'A neural network classifies ServiceNow incidents and assigns them to the right engineer. Assigning a ticket now takes 90% less time.',
-      'c3.h': 'Bulk changes without mistakes', 'c3.p': 'Automations so teams can update hundreds of AWS accounts at once, with guides and demo sessions.',
-      'prof.tag': 'Teaching', 'prof.h2': 'I teach what I use every day', 'prof.p': 'Python since 2023 and DevOps since 2024. One-off classes, full courses and team training. Every course has its open repository.',
-      'cu1': 'Python from scratch', 'cu2': 'Advanced Python', 'cu.datos': 'Data', 'cu3': 'Data analysis', 'cu4': 'Advanced data analysis', 'prof.todos': 'See all courses →',
-      'con.tag': "Let's work together", 'con.h2': 'Got a system, a team or an idea?', 'con.p': 'Tell me in two lines what you need. I reply within 48 hours.',
-      'o1': 'Consulting', 'o1p': 'SRE, observability and AI systems for your team', 'o2': 'Collaborations', 'o2p': 'Projects, content or talks',
-      'o3': 'Classes and training', 'o3p': 'For individuals or teams: Python, DevOps and applied AI', 'f.cursos': 'Courses'
-    }
-  };
-  // el español es el texto del HTML: se guarda al cargar para poder volver a él
-  document.querySelectorAll('[data-i18n]').forEach(function (el) { T.es[el.getAttribute('data-i18n')] = el.textContent; });
-  document.querySelectorAll('[data-i18n-html]').forEach(function (el) { T.es[el.getAttribute('data-i18n-html')] = el.innerHTML; });
-  var guarda = function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} };
-  var lee = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };
-
-  function idioma(l) {
-    document.documentElement.lang = l; guarda('lang', l);
-    document.querySelectorAll('[data-i18n]').forEach(function (el) { var v = T[l][el.getAttribute('data-i18n')]; if (v) el.textContent = v; });
-    document.querySelectorAll('[data-i18n-html]').forEach(function (el) { var v = T[l][el.getAttribute('data-i18n-html')]; if (v) el.innerHTML = v; });
-    document.getElementById('l-es').className = l === 'es' ? 'on' : '';
-    document.getElementById('l-en').className = l === 'en' ? 'on' : '';
-    document.dispatchEvent(new CustomEvent('idioma', { detail: l }));
-  }
-  document.getElementById('lang').addEventListener('click', function () { idioma(document.documentElement.lang === 'es' ? 'en' : 'es'); });
-  var l0 = lee('lang') || ((navigator.language || 'es').slice(0, 2) === 'es' ? 'es' : 'en');
-  if (l0 === 'en') idioma('en');
-
-  function iconos() {
-    var claro = document.documentElement.classList.contains('light');
-    document.getElementById('i-sol').style.display = claro ? 'none' : 'block';
-    document.getElementById('i-luna').style.display = claro ? 'block' : 'none';
-  }
-  document.getElementById('theme').addEventListener('click', function () {
-    var claro = document.documentElement.classList.toggle('light'); guarda('theme', claro ? 'light' : 'dark'); iconos();
-  });
-  iconos();
-
-  // aparición al bajar y cifras que cuentan hasta su valor
-  var quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (quieto || !('IntersectionObserver' in window)) { document.querySelectorAll('.rev').forEach(function (el) { el.classList.add('on'); }); return; }
-  var io = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('.rev').forEach(function (el) { io.observe(el); });
-  var cuenta = new IntersectionObserver(function (es) {
-    es.forEach(function (e) {
-      if (!e.isIntersecting) return; cuenta.unobserve(e.target);
-      var en = document.documentElement.lang === 'en', el = e.target, fin = parseFloat(el.dataset.count), dec = +(el.dataset.dec || 0), suf = el.dataset.suf || '', txt = el.textContent, t0 = performance.now();
-      if (!suf) return;   // las que llevan texto («3 premios») se quedan como están
-      (function paso(t) {
-        var k = Math.min(1, (t - t0) / 1100), v = fin * (1 - Math.pow(1 - k, 3));
-        el.textContent = (v < 0 ? '−' : '') + Math.abs(v).toFixed(dec).replace('.', en ? '.' : ',') + (en ? suf.trim() : suf);
-        if (k < 1) requestAnimationFrame(paso); else el.textContent = txt;
-      })(t0);
-    });
-  }, { threshold: .6 });
-  document.querySelectorAll('[data-count]').forEach(function (el) { cuenta.observe(el); });
-})();
-</script>
+<script src="assets/home.js?v=20261008i" defer></script>
 </body>
 </html>
