@@ -37,6 +37,12 @@
     document.documentElement.lang = l; guarda('lang', l);
     document.querySelectorAll('[data-i18n]').forEach(function (el) { var v = T[l][el.getAttribute('data-i18n')]; if (v) el.textContent = v; });
     document.querySelectorAll('[data-i18n-html]').forEach(function (el) { var v = T[l][el.getAttribute('data-i18n-html')]; if (v) el.innerHTML = v; });
+    // portadas que cambian de idioma (p. ej. Bookreader: español / inglés)
+    document.querySelectorAll('img[data-srcset-en]').forEach(function (img) {
+      var s = img.getAttribute('data-src-' + l), ss = img.getAttribute('data-srcset-' + l);
+      if (s) img.setAttribute('src', s);
+      if (ss) img.setAttribute('srcset', ss);
+    });
     document.getElementById('l-es').className = l === 'es' ? 'on' : '';
     document.getElementById('l-en').className = l === 'en' ? 'on' : '';
     document.dispatchEvent(new CustomEvent('idioma', { detail: l }));
