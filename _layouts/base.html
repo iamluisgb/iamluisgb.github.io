@@ -16,6 +16,9 @@
   <title>{% if page.layout == 'post' %}{{ titulo }} · Blog{% else %}{{ titulo }}{% endif %} · Luis González</title>
   <meta name="description" content="{{ desc_meta | default: 'Notas de ingeniería: SRE, IA aplicada y sistemas que aguantan producción.' }}">
   <meta name="author" content="Luis González">
+  {%- if page.noindex %}
+  <meta name="robots" content="noindex, nofollow">
+  {%- endif %}
   <link rel="canonical" href="https://luisgonzalezbernal.com{{ page.url }}">
 
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

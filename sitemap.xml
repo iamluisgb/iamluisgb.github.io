@@ -7,7 +7,7 @@
   <url><loc>https://luisgonzalezbernal.com/cursos.html</loc></url>
   <url><loc>https://luisgonzalezbernal.com/blog/</loc></url>
   <url><loc>https://luisgonzalezbernal.com/blog/niveles/</loc></url>
-{%- for post in site.posts %}
+{%- for post in site.posts %}{% unless post.noindex %}
   <url><loc>https://luisgonzalezbernal.com{{ post.url }}</loc><lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod></url>
-{%- endfor %}
+{%- endunless %}{% endfor %}
 </urlset>

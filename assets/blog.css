@@ -78,6 +78,14 @@ main { padding: 52px 0 72px; }
 .prosa hr { border: 0; border-top: 1px solid var(--line); margin: 2.4em 0; }
 .prosa img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--line); }
 
+/* tablas dentro del texto (GFM) */
+.prosa table { width: 100%; border-collapse: collapse; margin: 1.9em 0; font-size: .93rem; background: var(--surface); border: 1px solid var(--line); }
+.prosa thead th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); font-weight: 500; text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line-2); background: color-mix(in srgb, var(--surface-2) 55%, transparent); }
+.prosa tbody td { padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.prosa tbody tr:last-child td { border-bottom: 0; }
+.prosa code { white-space: nowrap; }
+.prosa table code { white-space: normal; }
+
 /* código */
 .prosa code { font-family: var(--mono); font-size: .88em; background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
 .prosa pre { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; overflow-x: auto; font-size: .86rem; line-height: 1.6; }
