@@ -1,0 +1,48 @@
+---
+layout: base
+title: Blog
+description: "Notas de ingeniería: SRE, IA aplicada y sistemas que aguantan producción. Cada entrada declara cuánta IA hay detrás."
+permalink: /blog/
+---
+<div class="intro">
+  <span class="label"><b>//</b> Blog</span>
+  <h1>Lo que aprendo manteniendo sistemas</h1>
+  <p>
+    Notas de ingeniería sobre SRE, IA aplicada y productos que tienen que aguantar producción.
+    Cada entrada lleva su <a href="/blog/niveles/">nivel de asistencia de IA</a> declarado: se ve
+    de un vistazo qué escribió una persona y qué escribió un modelo.
+  </p>
+</div>
+
+{%- if site.posts.size > 0 %}
+<div class="entradas">
+{%- for post in site.posts %}
+<article class="entrada">
+<div class="fila">
+<time datetime="{{ post.date | date_to_xmlschema }}">{% include fecha.html d=post.date %}</time>
+{%- if post.ia_nivel %}
+<span class="sep">·</span>
+{% include ia-insignia.html nivel=post.ia_nivel %}
+{%- endif %}
+</div>
+<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+{%- if post.description %}
+<p>{{ post.description }}</p>
+{%- endif %}
+</article>
+{%- endfor %}
+</div>
+{%- else %}
+<p class="vacio">Todavía no hay entradas publicadas.</p>
+{%- endif %}
+
+<div class="leyenda">
+  <h2>Cómo leo cada nivel</h2>
+  <ul>
+    <li><span class="n">Nivel 1</span><span><b>Humano.</b> Ni ideación ni redacción con IA. Opinión y análisis personal.</span></li>
+    <li><span class="n">Nivel 2</span><span><b>Co-creado.</b> La IA ayuda con estructura, borradores o reescritura; el control editorial y la validación son míos.</span></li>
+    <li><span class="n">Nivel 3</span><span><b>Asistencia puntual.</b> Texto mío; la IA solo corrigió gramática, buscó sinónimos o tradujo fragmentos.</span></li>
+    <li><span class="n">Nivel 4</span><span><b>Supervisado.</b> Redactado por IA y validado por mí antes de publicar.</span></li>
+  </ul>
+  <p style="margin:14px 0 0;font-size:.9rem"><a href="/blog/niveles/">El criterio completo, fase por fase →</a></p>
+</div>

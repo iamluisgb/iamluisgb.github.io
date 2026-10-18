@@ -1,2 +1,13 @@
+title: Luis González Bernal
+description: SRE, AI Engineer y profesor. Mantengo sistemas en producción, construyo productos con IA y enseño Python y DevOps.
+url: "https://luisgonzalezbernal.com"
+lang: es
+
 include:
   - .well-known
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml

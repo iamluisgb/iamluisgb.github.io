@@ -1,0 +1,14 @@
+{%- assign nivel = include.nivel | default: 1 -%}
+{%- case nivel -%}
+  {%- when 1 -%}
+    {%- assign clase = 'n1' -%}{%- assign nombre = 'Nivel 1 · humano' -%}{%- assign titulo = 'Creado al 100 % por una persona, sin IA en ideación ni redacción' -%}
+  {%- when 2 -%}
+    {%- assign clase = 'n2' -%}{%- assign nombre = 'Nivel 2 · co-creado' -%}{%- assign titulo = 'Escrito por mí, con IA en estructura, borradores o reescritura; control editorial y validación humanos' -%}
+  {%- when 3 -%}
+    {%- assign clase = 'n3' -%}{%- assign nombre = 'Nivel 3 · asistencia puntual' -%}{%- assign titulo = 'Texto íntegramente mío; la IA solo corrigió gramática, buscó sinónimos o tradujo fragmentos' -%}
+  {%- when 4 -%}
+    {%- assign clase = 'n4' -%}{%- assign nombre = 'Nivel 4 · supervisado' -%}{%- assign titulo = 'Generado por IA con supervisión y validación humana antes de publicar' -%}
+  {%- else -%}
+    {%- assign clase = 'n1' -%}{%- assign nombre = 'Nivel 1 · humano' -%}{%- assign titulo = 'Creado al 100 % por una persona' -%}
+{%- endcase -%}
+<a class="insignia {{ clase }}" href="/blog/niveles/#nivel-{{ nivel }}" title="{{ titulo }}"><span class="punto"></span>{{ nombre }}</a>

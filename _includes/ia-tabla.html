@@ -1,0 +1,32 @@
+<div class="autoria">
+  <div class="autoria-head">
+    <span class="label">📋 Autoría y transparencia</span>
+    {%- include ia-insignia.html nivel=page.ia_nivel %}
+  </div>
+  <table>
+    <thead>
+      <tr><th scope="col">Fase</th><th scope="col">Responsable</th><th scope="col">Detalle</th></tr>
+    </thead>
+    <tbody>
+    {%- for f in page.ia_fases %}
+      {%- assign q = f.quien | default: 'humano' -%}
+      {%- case q -%}
+        {%- when 'humano' -%}{%- assign qn = '100 % humano' -%}{%- assign qi = '👤' -%}
+        {%- when 'ia' -%}{%- assign qn = 'IA' -%}{%- assign qi = '🤖' -%}
+        {%- when 'hibrido' -%}{%- assign qn = 'Híbrido' -%}{%- assign qi = '🤝' -%}
+        {%- else -%}{%- assign qn = q -%}{%- assign qi = '' -%}
+      {%- endcase -%}
+      <tr>
+        <td>{{ f.fase }}</td>
+        <td class="quien {{ q }}">{{ qi }} {{ qn }}</td>
+        <td>{{ f.detalle }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+  {%- if page.ia_humano_pct %}
+  <div class="pie">Intervención humana: <b>{{ page.ia_humano_pct }} %</b>{% if page.ia_nota %} — {{ page.ia_nota }}{% endif %}</div>
+  {%- elsif page.ia_nota %}
+  <div class="pie">{{ page.ia_nota }}</div>
+  {%- endif %}
+</div>
