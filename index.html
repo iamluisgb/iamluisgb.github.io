@@ -193,6 +193,28 @@
     .card p { margin: 0; color: var(--soft); font-size: 14px; }
     @media (max-width: 760px) { .proyectos { grid-template-columns: 1fr; } }
 
+    /* calendario de GitHub */
+    .gh { margin-top: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+    .gh[hidden] { display: none; }
+    .gh-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; min-height: 22px; }
+    .gh-head p { margin: 0; font-size: 14px; color: var(--soft); }
+    .gh-head b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+    .gh-head a { font-family: var(--mono); font-size: 12px; color: var(--soft); text-decoration: none; white-space: nowrap; }
+    .gh-head a:hover { color: var(--electric); }
+    .gh-cal { display: grid; grid-auto-flow: column; grid-template-rows: 14px repeat(7, auto); grid-template-columns: auto repeat(var(--cols, 53), minmax(10px, 1fr)); gap: 3px; margin-top: 14px; padding-bottom: 2px; overflow-x: auto; font-family: var(--mono); font-size: 10px; line-height: 1; color: var(--soft); }
+    .gh-cal:focus-visible { outline: 2px solid var(--electric); outline-offset: 3px; }
+    .gh-cal span { display: flex; align-items: center; padding-right: 5px; position: sticky; left: 0; z-index: 1; background: var(--surface); }
+    .gh-cal .gh-mes { padding: 0; white-space: nowrap; position: static; background: none; }
+    .gh-cal i, .gh-ley i { display: block; aspect-ratio: 1; border-radius: 2px; }
+    .gh-ley { display: flex; justify-content: flex-end; align-items: center; gap: 3px; margin-top: 10px; font-family: var(--mono); font-size: 10px; color: var(--soft); }
+    .gh-ley i { width: 10px; }
+    .gh-ley span:first-child { margin-right: 4px; } .gh-ley span:last-child { margin-left: 4px; }
+    .n0 { background: var(--surface-2); }
+    .n1 { background: color-mix(in srgb, var(--electric) 25%, var(--surface-2)); }
+    .n2 { background: color-mix(in srgb, var(--electric) 50%, var(--surface-2)); }
+    .n3 { background: color-mix(in srgb, var(--electric) 75%, var(--surface-2)); }
+    .n4 { background: var(--electric); }
+
     /* sre */
     .dos { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 40px; align-items: start; }
     .lista { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px; }
@@ -332,6 +354,11 @@
           <div class="txt"><span class="label" data-i18n="ar.tag">Raiatech · app web</span><h3>Areté</h3><p data-i18n="ar.p">Entrenamiento de fuerza y resistencia: siete dominios medidos con tests reales y un plan que se adapta.</p></div>
         </a>
       </div>
+      <div class="gh rev" id="gh">
+        <div class="gh-head"><p id="gh-total"></p><a href="https://github.com/iamluisgb" target="_blank" rel="noopener" data-umami-event="web-github">iamluisgb ↗</a></div>
+        <div class="gh-cal" id="gh-cal" role="img" tabindex="0"></div>
+        <div class="gh-ley" aria-hidden="true"><span id="gh-menos"></span><i class="n0"></i><i class="n1"></i><i class="n2"></i><i class="n3"></i><i class="n4"></i><span id="gh-mas"></span></div>
+      </div>
     </div>
   </section>
 
@@ -408,5 +435,6 @@
 
 <script src="assets/incidente.js?v=20261008h" defer></script>
 <script src="assets/home.js?v=20261008i" defer></script>
+<script src="assets/github-calendario.js?v=20261105b" defer></script>
 </body>
 </html>
