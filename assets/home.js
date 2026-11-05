@@ -1,35 +1,81 @@
 (function () {
   var T = {
-    es: {},
-    en: {
-      'n1': '99.97%', 'n2': '−90%', 'nav.proyectos': 'Projects', 'nav.profesor': 'Teaching', 'nav.contacto': 'Contact',
-      'hero.label': 'SRE · <b>AI Engineer</b> · teacher', 'hero.h1': 'Systems that stay up. <em>AI that fixes.</em>',
-      'hero.sub': 'I keep systems running in production, build AI products and teach Python and DevOps. Based in Badajoz, working anywhere.',
-      'hero.cta': 'Get in touch', 'hero.cta2': 'See projects',
-      'sim.titulo': 'Simulation · production', 'sim.presupuesto': 'error budget', 'sim.latencia': 'p95 latency', 'sim.ia': 'AI · diagnosis',
-      'p1': 'availability on a platform running ~3,000 automated jobs a day', 'p2': 'time to assign incidents, with a machine learning classifier',
-      'p3n': '2 awards', 'p3': 'in 2020: <a href="https://www.ceia3.es/es/noticias/premios/el-proyecto-de-empresa-food-and-farm-analytics-ganador-de-los-premios-emilio-botin-2020-promovido-por-ceia3-y-santander-universidades/" target="_blank" rel="noopener">Emilio Botín ↗</a> and <a href="https://www.uma.es/UMA-Empresa/noticias/el-copernicus-hackathon-malaga-pone-la-ciudad-en-el-mapa-del-ecosistema-de-copernicus-en-europa/" target="_blank" rel="noopener">Copernicus Hackathon Málaga ↗</a>', 'p4n': 'since 2023', 'p4': 'teaching Python, data analysis and DevOps',
-      'proy.h2': 'AI products, in production', 'proy.p': 'I build them end to end: the product, the infrastructure and the AI.',
-      'fnf.tag': 'Agri · Emilio Botín Award 2020', 'fnf.p': 'Farmers dictate what they did and AI turns it into an operation checked against the official registry, with its cost per plot.',
-      'rep.tag': 'Agent pipeline · AI-generated', 'rep.p': 'A pipeline that researches, writes and checks its sources. One report a day since May. The text is written by AI.',
-      'br.tag': 'Raiatech · web app', 'br.p': 'An AI reader that explains what you read and helps you remember it. No account, in your browser.',
-      'ar.tag': 'Raiatech · web app', 'ar.p': 'Strength and endurance training: seven domains measured with real tests and a plan that adapts.',
-      'sre.h2': 'Stable production in pharma', 'sre.p': 'Since 2022 I lead an SRE team. I make sure systems hold up, that we find out before users do, and that repetitive work gets automated.',
-      'sre.l1': 'Observability and incident response with Splunk ITSI and PagerDuty', 'sre.l2': 'Automation with Rundeck, Ansible and Python',
-      'sre.l3': 'CI/CD and Kubernetes, with measured availability targets', 'sre.l4': 'AI for operations: classify, prioritise and diagnose', 'sre.cv': 'See the full CV',
-      'c1.h': 'Automation platform', 'c1.p': 'About 3,000 jobs a day, deployed on Kubernetes with Ansible and Jenkins. Custom plugins for Splunk, ServiceNow and Vault.',
-      'c2.p': 'A neural network classifies ServiceNow incidents and assigns them to the right engineer. Assigning a ticket now takes 90% less time.',
-      'c3.h': 'Bulk changes without mistakes', 'c3.p': 'Automations so teams can update hundreds of AWS accounts at once, with guides and demo sessions.',
-      'prof.tag': 'Teaching', 'prof.h2': 'I teach what I use every day', 'prof.p': 'Python since 2023 and DevOps since 2024. One-off classes, full courses and team training. Every course has its open repository.',
-      'cu1': 'Python from scratch', 'cu2': 'Advanced Python', 'cu.datos': 'Data', 'cu3': 'Data analysis', 'cu4': 'Advanced data analysis', 'prof.todos': 'See all courses →',
-      'con.tag': "Let's work together", 'con.h2': 'Got a system, a team or an idea?', 'con.p': 'Tell me in two lines what you need. I reply within 48 hours.',
-      'o1': 'Consulting', 'o1p': 'SRE, observability and AI systems for your team', 'o2': 'Collaborations', 'o2p': 'Projects, content or talks',
-      'o3': 'Classes and training', 'o3p': 'For individuals or teams: Python, DevOps and applied AI', 'f.cursos': 'Courses'
+    en: {},
+    es: {
+      "ar.p": "Entrenamiento de fuerza y resistencia: siete dominios medidos con tests reales y un plan que se adapta.",
+      "ar.tag": "Raiatech · app web",
+      "br.p": "Un lector con IA que te explica lo que lees y te ayuda a recordarlo. Sin cuenta, en el navegador.",
+      "br.tag": "Raiatech · app web",
+      "c1.h": "Plataforma de automatización",
+      "c1.p": "Unas 3.000 tareas al día, desplegada en Kubernetes con Ansible y Jenkins. Plugins propios para Splunk, ServiceNow y Vault.",
+      "c2.p": "Una red neuronal clasifica los incidentes de ServiceNow y los asigna al técnico adecuado. Asignar un ticket pasó a llevar un 90 % menos de tiempo.",
+      "c3.h": "Cambios en masa sin errores",
+      "c3.p": "Automatizaciones para que los equipos actualicen cientos de cuentas de AWS de una vez, con guías y sesiones de demostración.",
+      "con.h2": "¿Buscas a alguien para IA, SRE o plataforma?",
+      "con.p": "Escríbeme o búscame en LinkedIn. Te cuento cualquiera de estos sistemas en detalle.",
+      "con.tag": "Contacto",
+      "cu.datos": "Datos",
+      "cu1": "Python desde cero",
+      "cu2": "Python avanzado",
+      "cu3": "Análisis de datos",
+      "cu4": "Análisis de datos avanzado",
+      "eng.1": "Grafo de conocimiento operativo",
+      "eng.1p": "Una ontología sobre sistemas de operaciones en vivo, abierta a agentes de IA por MCP. No almacena datos.",
+      "eng.1r": "5.000+ consultas · p50 0,6 s",
+      "eng.2p": "Un agente de lectura que corre en el navegador, con compartir cifrado de extremo a extremo, un servidor MCP de solo lectura y evaluaciones propias.",
+      "eng.2r": "61 decisiones de arquitectura documentadas",
+      "eng.3p": "Una red neuronal, entrenada con 18 meses de tickets, que asigna cada incidente al técnico adecuado.",
+      "eng.3r": "de 45 min a menos de 5 min",
+      "eng.h2": "Tres sistemas y cómo están hechos",
+      "eng.p": "De cada uno: problema, arquitectura, decisiones y resultado medido. La página detallada está en inglés.",
+      "f.cursos": "Cursos",
+      "fnf.p": "El agricultor dicta lo que ha hecho y la IA lo convierte en una operación validada contra el registro oficial, con su coste por parcela.",
+      "fnf.tag": "Agro · Premio Emilio Botín 2020",
+      "hero.cta": "Ver la ingeniería",
+      "hero.cta2": "Leer mi CV",
+      "hero.h1": "IA para operaciones. <em>Respuestas que se pueden auditar.</em>",
+      "hero.label": "AI Engineer · <b>Operaciones y fiabilidad</b>",
+      "hero.sub": "Construyo grafos de conocimiento, agentes y sistemas de evaluación sobre sistemas en producción. Vengo del SRE, así que me importa lo que pasa después de la demo.",
+      "met.1": "consultas al grafo de conocimiento, de 9 ingenieros",
+      "met.2": "de esas consultas llegan a través de agentes de IA",
+      "met.3": "respondidas con datos",
+      "met.4": "de latencia p50 por consulta",
+      "met.f": "Cifras reales de mi puesto actual en una farmacéutica global. <a href=\"engineering.html#graph\">Cómo funciona</a>",
+      "met.t": "En producción · mi trabajo actual",
+      "n1": "99,97 %",
+      "n2": "−90 %",
+      "nav.contacto": "Contacto",
+      "nav.profesor": "Profesor",
+      "nav.proyectos": "Proyectos",
+      "o1": "Puestos de ingeniería",
+      "o3": "Consultoría y formación",
+      "o3p": "Para empresas, a través de Raiatech",
+      "p1": "de disponibilidad en una plataforma con ~3.000 tareas automáticas al día",
+      "p2": "de tiempo para asignar incidentes, con un clasificador de machine learning",
+      "p3": "en 2020: <a href=\"https://www.ceia3.es/es/noticias/premios/el-proyecto-de-empresa-food-and-farm-analytics-ganador-de-los-premios-emilio-botin-2020-promovido-por-ceia3-y-santander-universidades/\" target=\"_blank\" rel=\"noopener\">Emilio Botín ↗</a> y <a href=\"https://www.uma.es/UMA-Empresa/noticias/el-copernicus-hackathon-malaga-pone-la-ciudad-en-el-mapa-del-ecosistema-de-copernicus-en-europa/\" target=\"_blank\" rel=\"noopener\">Copernicus Hackathon Málaga ↗</a>",
+      "p3n": "2 premios",
+      "p4": "enseñando Python, análisis de datos y DevOps",
+      "p4n": "desde 2023",
+      "prof.h2": "Enseño lo que uso cada día",
+      "prof.p": "Python desde 2023, DevOps desde 2024 y ahora AIOps y agentes LLM. Cada curso tiene su repositorio abierto.",
+      "prof.tag": "Profesor",
+      "prof.todos": "Ver todos los cursos →",
+      "proy.h2": "Productos con IA que mantengo en producción",
+      "proy.p": "Míos, de principio a fin: el producto, la infraestructura y la parte de IA.",
+      "rep.p": "Un pipeline que investiga, redacta y verifica sus fuentes. Publica un informe cada día desde mayo. Los textos los escribe la IA.",
+      "rep.tag": "Pipeline de agentes · generado con IA",
+      "sre.cv": "Ver el CV completo",
+      "sre.h2": "Primero, fiabilidad: en el sector farmacéutico",
+      "sre.l1": "Observabilidad e incidentes con Splunk ITSI y PagerDuty",
+      "sre.l2": "Automatización con Rundeck, Ansible y Python",
+      "sre.l3": "CI/CD y Kubernetes, con objetivos de disponibilidad medidos",
+      "sre.l4": "IA aplicada a operaciones: clasificar, priorizar y diagnosticar",
+      "sre.p": "De 2022 a 2025 lideré un equipo de SRE. Ahora trabajo como ingeniero de AIOps con sistemas del mismo tipo: tienen que aguantar, y tenemos que enterarnos antes que el usuario."
     }
   };
-  // el español es el texto del HTML: se guarda al cargar para poder volver a él
-  document.querySelectorAll('[data-i18n]').forEach(function (el) { T.es[el.getAttribute('data-i18n')] = el.textContent; });
-  document.querySelectorAll('[data-i18n-html]').forEach(function (el) { T.es[el.getAttribute('data-i18n-html')] = el.innerHTML; });
+  // el inglés es el texto del HTML: se guarda al cargar para poder volver a él
+  document.querySelectorAll('[data-i18n]').forEach(function (el) { T.en[el.getAttribute('data-i18n')] = el.textContent; });
+  document.querySelectorAll('[data-i18n-html]').forEach(function (el) { T.en[el.getAttribute('data-i18n-html')] = el.innerHTML; });
   var guarda = function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} };
   var lee = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };
 
@@ -47,9 +93,8 @@
     document.getElementById('l-en').className = l === 'en' ? 'on' : '';
     document.dispatchEvent(new CustomEvent('idioma', { detail: l }));
   }
-  document.getElementById('lang').addEventListener('click', function () { idioma(document.documentElement.lang === 'es' ? 'en' : 'es'); });
-  var l0 = lee('lang') || ((navigator.language || 'es').slice(0, 2) === 'es' ? 'es' : 'en');
-  if (l0 === 'en') idioma('en');
+  document.getElementById('lang').addEventListener('click', function () { idioma(document.documentElement.lang === 'en' ? 'es' : 'en'); });
+  idioma(lee('lang') === 'es' ? 'es' : 'en');
 
   function iconos() {
     var claro = document.documentElement.classList.contains('light');

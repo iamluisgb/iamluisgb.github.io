@@ -15,8 +15,8 @@
     margin: 0;
     padding: 0;
     font-family: "Times New Roman", Times, serif;
-    font-size: 9.5pt;
-    line-height: 1.18;
+    font-size: 9.2pt;
+    line-height: 1.15;
     color: #000;
     background: #fff;
   }
@@ -142,9 +142,9 @@
 
   <header>
     <h1>Luis González Bernal</h1>
-    <div class="tagline">SRE | DevOps | CI/CD | Automation</div>
+    <div class="tagline">AI Engineer &mdash; Operations &amp; Reliability</div>
     <div class="contact">
-      Madrid, Spain
+      Badajoz, Spain
       <span class="sep">|</span>
       +34 630 254 790
       <span class="sep">|</span>
@@ -158,124 +158,64 @@
     </div>
   </header>
 
-  <p class="summary">
-    Site Reliability Engineer with a background in Backend Development with Python. Experience in automation with Rundeck, Ansible and GitLab, creation of CI/CD pipelines and deployment in Kubernetes. I enjoy working within agile teams and collaborating with others to find innovative solutions.
-  </p>
+  <p class="summary">AI Application Engineer with an SRE background. I build knowledge graphs, agents and evaluation pipelines that turn enterprise operational data (observability, ITSM, on-call and CMDB systems) into answers that can be audited. Strong foundation in Python, CI/CD and Kubernetes.</p>
 
   <h2>Skills</h2>
   <div class="skills">
-    <p><span class="label">DevOps &amp; SRE:</span> CI/CD, Jenkins, Ansible, Docker, Kubernetes, Rundeck, Git, GitHub, GitLab, Bitbucket, Prometheus, New Relic, EFK Stack, Sysdig, Gitflow, Trunk-Based Development.</p>
-    <p><span class="label">Backend &amp; Data:</span> Python, Django, Django REST Framework, NumPy, Pandas, R, Shiny, Plotly, JavaScript, MySQL, PostgreSQL.</p>
-    <p><span class="label">Cloud &amp; Platform:</span> AWS, Linux, Backend, Full-Stack.</p>
-    <p><span class="label">Languages:</span> English &mdash; Professional proficiency. Spanish &mdash; Native.</p>
+    <p><span class="label">AI &amp; LLM:</span> Claude, LangGraph, MCP (Model Context Protocol), RAG, ChromaDB, Knowledge Graphs &amp; Ontologies (LinkML), LLM Evaluation (LLM-as-judge, golden datasets).</p>
+    <p><span class="label">Observability &amp; AIOps:</span> Splunk ITSI, PagerDuty, ServiceNow, LogicMonitor, Episode Lifecycle, Alert Correlation.</p>
+    <p><span class="label">DevOps &amp; SRE:</span> CI/CD, GitLab, Jenkins, Ansible, Docker, Kubernetes, Rundeck, Terraform, Git.</p>
+    <p><span class="label">Backend &amp; Data:</span> Python, FastAPI, PostgreSQL, pytest, RBAC, JavaScript, Pandas, Django.</p>
+    <p><span class="label">Cloud &amp; Platform:</span> AWS, GCP (Vertex AI), Linux, HashiCorp Vault.</p>
+    <p><span class="label">Languages:</span> English — Professional proficiency. Spanish — Native.</p>
   </div>
 
   <h2>Experience</h2>
 
   <div class="entry">
-    <div class="entry-row">
-      <span class="left">Famytec (contractor at Roche)</span>
-      <span class="right">Madrid, Spain</span>
-    </div>
-    <div class="entry-sub">
-      <span>DevOps / SRE &mdash; Team Lead</span>
-      <span class="right">01/2022 &ndash; Present</span>
-    </div>
+    <div class="entry-row"><span class="left">TCS (contractor at a global pharma company)</span><span class="right">Madrid, Spain</span></div>
+    <div class="entry-sub"><span>AIOps Engineer</span><span class="right">10/2025 &ndash; Present</span></div>
     <ul>
-      <li>Manage the Rundeck instance at Roche running ~3,000 jobs/day. Built CI/CD pipelines deploying Rundeck on Kubernetes with Ansible and Jenkins, reaching an SLI of 99.97%. Diagnose and resolve issues while minimizing user impact.</li>
-      <li>Extended Rundeck with custom Python and Bash plugins integrating Splunk, ServiceNow and HashiCorp Vault.</li>
-      <li>Built <em>Autodispatcher</em>, a Django web app that classifies ServiceNow incidents with a neural network and auto-assigns them to the right technician, cutting ticket assignment time by 90%. Stack: Python, Django, JavaScript, Docker, Nginx, Celery.</li>
-      <li>Helped users automate processes with Rundeck (e.g. bulk update of 600+ AWS accounts), running demo days and writing onboarding guidelines.</li>
-      <li>As Team Lead, guide a group of SREs embedded across client projects &mdash; fostering continuous learning, sharing best practices and ensuring high engineering standards.</li>
+      <li>Led the design and built the core of an operational knowledge graph and ontology over the company's observability, ITSM, CMDB and on-call systems. It stores no data: every query resolves live from the systems of record. Exposed to AI agents via an MCP server and a web UI, with per-user audit and role-based access. 5,000+ queries from 9 engineers, 90% through AI agents; 88% answered with data, p50 latency 0.6 s.</li>
+      <li>Built an AI incident response agent (LangGraph, Claude, RAG + ChromaDB) that diagnoses incidents by correlating monitoring episodes, tickets and operational knowledge, and graduated it from L1 (suggest) to L2 (act under guardrails).</li>
+      <li>Built the evaluation layer for agents and skills: gold/silver/bronze datasets from human-verified incidents, weekly LLM-as-judge runs and usage telemetry. Defined autonomy levels that gate what every agent can do unsupervised.</li>
+      <li>Own a self-service recovery automation system: ~950 automated remediations/month across 4 orchestrators, used by 10+ teams to run their own recovery workflows.</li>
+      <li>Built 15+ AI-powered skills automating sprint planning, incident management, documentation authoring and cross-system troubleshooting.</li>
+      <li>Operate the central alert-correlation and incident-routing platform, serving 50+ application teams.</li>
     </ul>
   </div>
-
   <div class="entry">
-    <div class="entry-row">
-      <span class="left">Haciendas Bio</span>
-      <span class="right">Badajoz, Spain</span>
-    </div>
-    <div class="entry-sub">
-      <span>Backend Developer / Data Analyst</span>
-      <span class="right">01/2018 &ndash; 12/2021</span>
-    </div>
+    <div class="entry-row"><span class="left">Famytec (contractor at a global pharma company)</span><span class="right">Madrid, Spain</span></div>
+    <div class="entry-sub"><span>DevOps / SRE — Team Lead</span><span class="right">01/2022 &ndash; 09/2025</span></div>
     <ul>
-      <li>Designed and shipped an ERP on AWS for the production department (40+ daily users), replacing Excel-based workflows and cutting data-recording time by 50%. Stack: Python, Django, JavaScript, AWS (EC2, RDS, S3, Lambda), Linux, Docker.</li>
-      <li>Built a BI platform to control production costs, enabling data-driven decisions that reduced some activity costs by 20%. Stack: R, SQL, Shiny, RMarkdown, Plotly.</li>
-      <li>Developed harvest-prediction models for multiple crops, improving forecast accuracy by 70%. Stack: R.</li>
+      <li>Managed the Rundeck instance running ~3,000 jobs/day, extended with Python plugins for Splunk, ServiceNow and Vault. Built CI/CD pipelines deploying on Kubernetes with Ansible and Jenkins, reaching 99.97% SLI.</li>
+      <li>Analyzed 18 months of historical ticket-assignment data to build Autodispatcher, an ML-powered classifier (neural network) that cut mean ticket assignment time from 45 min to under 5 min (90% reduction).</li>
+      <li>Designed and built a PagerDuty Account Vending Machine: self-service platform (Terraform modules, Terraform Cloud, GitOps with Python + Jinja2 + GitLab CI/CD), adopted as the team's production onboarding system.</li>
+      <li>As Team Lead, guided SREs embedded across client projects: continuous learning, best practices, engineering standards.</li>
     </ul>
   </div>
-
   <div class="entry">
-    <div class="entry-row">
-      <span class="left">Haciendas Bio</span>
-      <span class="right">Badajoz, Spain</span>
-    </div>
-    <div class="entry-sub">
-      <span>Agricultural Engineer</span>
-      <span class="right">06/2016 &ndash; 12/2017</span>
-    </div>
+    <div class="entry-row"><span class="left">Haciendas Bio</span><span class="right">Badajoz, Spain</span></div>
+    <div class="entry-sub"><span>Backend Developer / Data Analyst (earlier: Agricultural Engineer, 2016–2017)</span><span class="right">01/2018 &ndash; 12/2021</span></div>
     <ul>
-      <li>Managed and planned work units on a farm operation, leading teams of up to 50 people.</li>
+      <li>Shipped an ERP on AWS (Python, Django) for 40+ daily users, cutting data-recording time by 50%; built BI dashboards (R, SQL) that cut some activity costs by 20%.</li>
     </ul>
   </div>
 
   <h2>Education</h2>
-
-  <div class="entry">
-    <div class="entry-row">
-      <span class="left">University of Córdoba</span>
-      <span class="right">Córdoba, Spain</span>
-    </div>
-    <div class="entry-sub">
-      <span>Master in Digital Transformation</span>
-      <span class="right">2018 &ndash; 2019</span>
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="entry-row">
-      <span class="left">University of Córdoba</span>
-      <span class="right">Córdoba, Spain</span>
-    </div>
-    <div class="entry-sub">
-      <span>Master in Agricultural Engineering</span>
-      <span class="right">2015 &ndash; 2017</span>
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="entry-row">
-      <span class="left">University of Extremadura</span>
-      <span class="right">Badajoz, Spain</span>
-    </div>
-    <div class="entry-sub">
-      <span>Degree in Agricultural Engineering</span>
-      <span class="right">2011 &ndash; 2015</span>
-    </div>
-  </div>
+  <p class="skills">Master in Digital Transformation, University of Córdoba (2019)  ·  Master &amp; Degree in Agricultural Engineering, Universities of Córdoba and Extremadura (2011–2017)</p>
 
   <h2>Projects</h2>
   <div class="entry">
-    <div class="entry-row">
-      <span class="left">fnfanalytics</span>
-      <span class="right">2020 &ndash; Present</span>
-    </div>
-    <ul>
-      <li>ERP that helps farmers be more efficient. Allows farmers to record all crop work and analyze costs in an advanced way.</li>
-    </ul>
+    <div class="entry-row"><span class="left">Myrmex</span><span class="right">2026 &ndash; Present</span></div>
+    <ul><li>Local orchestrator for parallel Claude Code agents: each runs in its own git worktree and tmux session, driven from one web page with on-device speech-to-text (Parakeet / faster-whisper). Backlog-driven briefs, agent-to-agent messaging and hermetic CI. ~1,200 commits.</li></ul>
   </div>
 
-  <h2>Mentorship</h2>
+  <h2>Teaching &amp; Awards</h2>
   <ul class="misc-list">
-    <li><strong>Python Teacher</strong> (2023 &ndash; Present): Programming, Data Structures &amp; Algorithms, Django, Data Analysis with Python.</li>
-    <li><strong>DevOps Teacher</strong> (2024 &ndash; Present): CI/CD, Automation.</li>
-  </ul>
-
-  <h2>Awards &amp; Certifications</h2>
-  <ul class="misc-list">
-    <li><strong><a href="https://www.uma.es/UMA-Empresa/noticias/el-copernicus-hackathon-malaga-pone-la-ciudad-en-el-mapa-del-ecosistema-de-copernicus-en-europa/">Copernicus Hackathon Málaga</a> &mdash; 1st Prize</strong> (2020): App using satellite imagery to predict and visualize mosquito and jellyfish outbreaks.</li>
-    <li><strong><a href="https://www.ceia3.es/es/noticias/premios/el-proyecto-de-empresa-food-and-farm-analytics-ganador-de-los-premios-emilio-botin-2020-promovido-por-ceia3-y-santander-universidades/">Emilio Botín Award</a> (ceiA3 and Santander Universidades, A3BT! competition) &mdash; 1st Prize</strong> (2020): ERP that helps farmers be more efficient.</li>
+    <li><strong>Teacher</strong> (2023 &ndash; Present): AIOps and LLM agents, Python and algorithms, DevOps and CI/CD.</li>
+    <li><strong><a href="https://www.uma.es/UMA-Empresa/noticias/el-copernicus-hackathon-malaga-pone-la-ciudad-en-el-mapa-del-ecosistema-de-copernicus-en-europa/">Copernicus Hackathon Málaga</a> &mdash; 1st Prize</strong> (2020): satellite imagery to predict mosquito and jellyfish outbreaks.</li>
+    <li><strong><a href="https://www.ceia3.es/es/noticias/premios/el-proyecto-de-empresa-food-and-farm-analytics-ganador-de-los-premios-emilio-botin-2020-promovido-por-ceia3-y-santander-universidades/">Emilio Botín Award</a> &mdash; 1st Prize</strong> (2020): Food &amp; Farm Analytics, ceiA3 and Santander Universidades.</li>
     <li><strong>Certified SAFe® 5 Agilist.</strong></li>
   </ul>
 

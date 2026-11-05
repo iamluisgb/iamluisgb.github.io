@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Resume — Luis González</title>
-  <meta name="description" content="Luis González — SRE, DevOps & Automation. Resume.">
+  <meta name="description" content="Luis González: AI Engineer, Operations & Reliability. Resume.">
   <meta name="author" content="Luis González">
 
   <!-- Umami Analytics -->
@@ -18,7 +18,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Resume — Luis González">
-  <meta property="og:description" content="Luis González — SRE, DevOps & Automation. Resume.">
+  <meta property="og:description" content="Luis González: AI Engineer, Operations & Reliability. Resume.">
   <meta property="og:image" content="https://luisgonzalezbernal.com/images/og.jpg">
   <meta property="og:url" content="https://luisgonzalezbernal.com/cv.html">
   <meta property="og:type" content="profile">
@@ -26,7 +26,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Resume — Luis González">
-  <meta name="twitter:description" content="Luis González — SRE, DevOps & Automation. Resume.">
+  <meta name="twitter:description" content="Luis González: AI Engineer, Operations & Reliability. Resume.">
   <meta name="twitter:image" content="https://luisgonzalezbernal.com/images/og.jpg">
   <meta name="twitter:site" content="@iamluisgb">
 
@@ -267,10 +267,10 @@
       </a>
       <div>
         <h1 class="text-2xl font-bold tracking-tight">Luis González Bernal</h1>
-        <p class="font-mono text-sm text-cyber-light mt-1">SRE | DevOps | CI/CD | Automation</p>
+        <p class="font-mono text-sm text-cyber-light mt-1">AI Engineer — Operations &amp; Reliability</p>
       </div>
       <p class="text-sm text-on-surface leading-relaxed">
-        Site Reliability Engineer with a background in Backend Development with Python. Experience in automation with Rundeck, Ansible and Gitlab, creation of CI/CD pipelines and deployment in Kubernetes. I like working within agile teams and collaborating with others to find innovative solutions.
+        AI Application Engineer with an SRE background. I build knowledge graphs, agents and evaluation pipelines that turn enterprise operational data (observability, ITSM, on-call and CMDB systems) into answers that can be audited. Strong foundation in Python, CI/CD and Kubernetes.
       </p>
 
       <!-- Contact chips -->
@@ -293,7 +293,7 @@
         </span>
         <span class="chip font-mono text-[11px] text-on-surface px-3 py-1.5 rounded-md flex items-center gap-1.5">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Madrid, Spain
+          Badajoz, Spain
         </span>
       </div>
     </section>
@@ -305,17 +305,34 @@
       <article class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
         <div class="flex items-start justify-between gap-3 flex-wrap">
           <div>
-            <p class="font-semibold text-sm">DevOps / SRE — Team Lead</p>
-            <p class="font-mono text-[11px] text-cyber-light mt-0.5">Famytec (contractor at Roche) · Madrid, Spain</p>
+            <p class="font-semibold text-sm">AIOps Engineer</p>
+            <p class="font-mono text-[11px] text-cyber-light mt-0.5">TCS (contractor at a global pharma company) · Madrid, Spain</p>
           </div>
-          <span class="font-mono text-[10px] text-on-surface">01/2022 — Current</span>
+          <span class="font-mono text-[10px] text-on-surface">10/2025 — Current</span>
         </div>
         <ul class="bullets text-xs text-on-surface leading-relaxed flex flex-col gap-1.5">
-          <li>Manage the Rundeck instance at Roche running ~3,000 jobs/day. Built CI/CD pipelines deploying Rundeck on Kubernetes with Ansible and Jenkins, reaching an SLI of 99.97%. Diagnose and resolve issues while minimizing user impact.</li>
-          <li>Extended Rundeck with custom Python and Bash plugins integrating Splunk, ServiceNow and HashiCorp Vault.</li>
-          <li>Built <em>Autodispatcher</em>: a Django web app that classifies ServiceNow incidents with a neural network and auto-assigns them to the right technician — cutting ticket assignment time by 90%. Stack: Python, Django, JavaScript, Docker, Nginx, Celery.</li>
-          <li>Helped users automate processes with Rundeck (e.g. bulk update of 600+ AWS accounts), running demo days and writing onboarding guidelines.</li>
-          <li>As Team Lead, I guide a group of SREs embedded across client projects — fostering continuous learning, sharing best practices and ensuring high engineering standards.</li>
+          <li>Led the design and built the core of an operational knowledge graph and ontology over the company's observability, ITSM, CMDB and on-call systems. It stores no data: every query resolves live from the systems of record. Exposed to AI agents via an MCP server and a web UI, with per-user audit and role-based access. 5,000+ queries from 9 engineers, 90% through AI agents; 88% answered with data, p50 latency 0.6 s.</li>
+          <li>Built an AI incident response agent (LangGraph, Claude, RAG + ChromaDB) that diagnoses incidents by correlating monitoring episodes, tickets and operational knowledge, and graduated it from L1 (suggest) to L2 (act under guardrails).</li>
+          <li>Built the evaluation layer for agents and skills: gold/silver/bronze datasets from human-verified incidents, weekly LLM-as-judge runs and usage telemetry. Defined autonomy levels that gate what every agent can do unsupervised.</li>
+          <li>Own a self-service recovery automation system: ~950 automated remediations/month across 4 orchestrators, used by 10+ teams to run their own recovery workflows.</li>
+          <li>Built 15+ AI-powered skills automating sprint planning, incident management, documentation authoring and cross-system troubleshooting.</li>
+          <li>Operate the central alert-correlation and incident-routing platform, serving 50+ application teams.</li>
+        </ul>
+      </article>
+
+      <article class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <div>
+            <p class="font-semibold text-sm">DevOps / SRE — Team Lead</p>
+            <p class="font-mono text-[11px] text-cyber-light mt-0.5">Famytec (contractor at a global pharma company) · Madrid, Spain</p>
+          </div>
+          <span class="font-mono text-[10px] text-on-surface">01/2022 — 09/2025</span>
+        </div>
+        <ul class="bullets text-xs text-on-surface leading-relaxed flex flex-col gap-1.5">
+          <li>Managed the Rundeck instance running ~3,000 jobs/day, extended with Python plugins for Splunk, ServiceNow and Vault. Built CI/CD pipelines deploying on Kubernetes with Ansible and Jenkins, reaching 99.97% SLI.</li>
+          <li>Analyzed 18 months of historical ticket-assignment data to build Autodispatcher, an ML-powered classifier (neural network) that cut mean ticket assignment time from 45 min to under 5 min (90% reduction).</li>
+          <li>Designed and built a PagerDuty Account Vending Machine: self-service platform (Terraform modules, Terraform Cloud, GitOps with Python + Jinja2 + GitLab CI/CD), adopted as the team's production onboarding system.</li>
+          <li>As Team Lead, guided SREs embedded across client projects: continuous learning, best practices, engineering standards.</li>
         </ul>
       </article>
 
@@ -323,175 +340,53 @@
         <div class="flex items-start justify-between gap-3 flex-wrap">
           <div>
             <p class="font-semibold text-sm">Backend Developer / Data Analyst</p>
-            <p class="font-mono text-[11px] text-cyber-light mt-0.5">Haciendas Bio · Badajoz, Spain</p>
+            <p class="font-mono text-[11px] text-cyber-light mt-0.5">Haciendas Bio · Badajoz, Spain (earlier: Agricultural Engineer, 2016–2017)</p>
           </div>
           <span class="font-mono text-[10px] text-on-surface">01/2018 — 12/2021</span>
         </div>
         <ul class="bullets text-xs text-on-surface leading-relaxed flex flex-col gap-1.5">
-          <li>Designed and shipped an ERP on AWS for the production department (40+ daily users), replacing Excel-based workflows and cutting data-recording time by 50%. Stack: Python, Django, JavaScript, AWS (EC2, RDS, S3, Lambda), Linux, Docker.</li>
-          <li>Built a BI platform to control production costs — enabling data-driven decisions that reduced some activity costs by 20%. Stack: R, SQL, Shiny, RMarkdown, Plotly.</li>
-          <li>Developed harvest-prediction models for multiple crops, improving forecast accuracy by 70%. Stack: R.</li>
+          <li>Shipped an ERP on AWS (Python, Django) for 40+ daily users, cutting data-recording time by 50%; built BI dashboards (R, SQL) that cut some activity costs by 20%.</li>
         </ul>
       </article>
 
-      <article class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
-        <div class="flex items-start justify-between gap-3 flex-wrap">
-          <div>
-            <p class="font-semibold text-sm">Agricultural Engineer</p>
-            <p class="font-mono text-[11px] text-cyber-light mt-0.5">Haciendas Bio · Badajoz, Spain</p>
-          </div>
-          <span class="font-mono text-[10px] text-on-surface">06/2016 — 12/2017</span>
-        </div>
-        <ul class="bullets text-xs text-on-surface leading-relaxed flex flex-col gap-1.5">
-          <li>Managed and planned work units on a farm operation, leading teams of up to 50 people.</li>
-        </ul>
-      </article>
     </section>
 
     <!-- SKILLS -->
     <section class="flex flex-col gap-3 animate-in delay-2">
       <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Skills</h2>
-
-      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-4">
-        <div>
-          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">DevOps & SRE</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">CI/CD</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Jenkins</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Ansible</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Docker</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Kubernetes</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Rundeck</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Git</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">GitHub</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">GitLab</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Bitbucket</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Gitflow</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Trunk-Based Dev</span>
-          </div>
-        </div>
-
-        <div>
-          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Observability</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Prometheus</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">New Relic</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">EFK Stack</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Sysdig</span>
-          </div>
-        </div>
-
-        <div>
-          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Backend & Data</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Python</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Django</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">DRF</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">NumPy</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Pandas</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">R</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Shiny</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Plotly</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">JavaScript</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">MySQL</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">PostgreSQL</span>
-          </div>
-        </div>
-
-        <div>
-          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Cloud & Platform</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">AWS</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Linux</span>
-          </div>
-        </div>
-
-        <div>
-          <p class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-2">Languages</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">English — Professional</span>
-            <span class="chip font-mono text-[10px] text-on-surface px-2 py-1 rounded-md">Spanish — Native</span>
-          </div>
-        </div>
+      <div class="text-xs text-on-surface leading-relaxed flex flex-col gap-2">
+        <p><strong class="text-on-bg">AI &amp; LLM:</strong> Claude, LangGraph, MCP (Model Context Protocol), RAG, ChromaDB, Knowledge Graphs &amp; Ontologies (LinkML), LLM Evaluation (LLM-as-judge, golden datasets).</p>
+        <p><strong class="text-on-bg">Observability &amp; AIOps:</strong> Splunk ITSI, PagerDuty, ServiceNow, LogicMonitor, Episode Lifecycle, Alert Correlation.</p>
+        <p><strong class="text-on-bg">DevOps &amp; SRE:</strong> CI/CD, GitLab, Jenkins, Ansible, Docker, Kubernetes, Rundeck, Terraform, Git.</p>
+        <p><strong class="text-on-bg">Backend &amp; Data:</strong> Python, FastAPI, PostgreSQL, pytest, RBAC, JavaScript, Pandas, Django.</p>
+        <p><strong class="text-on-bg">Cloud &amp; Platform:</strong> AWS, GCP (Vertex AI), Linux, HashiCorp Vault.</p>
+        <p><strong class="text-on-bg">Languages:</strong> English — Professional proficiency. Spanish — Native.</p>
       </div>
     </section>
 
     <!-- EDUCATION -->
     <section class="flex flex-col gap-3 animate-in delay-3">
       <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Education</h2>
-
-      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
-        <div class="flex items-start justify-between gap-3 flex-wrap">
-          <div>
-            <p class="font-semibold text-sm">Master in Digital Transformation</p>
-            <p class="font-mono text-[11px] text-cyber-light mt-0.5">University of Córdoba · Córdoba, Spain</p>
-          </div>
-          <span class="font-mono text-[10px] text-on-surface">2018 — 2019</span>
-        </div>
-      </div>
-
-      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
-        <div class="flex items-start justify-between gap-3 flex-wrap">
-          <div>
-            <p class="font-semibold text-sm">Master in Agricultural Engineering</p>
-            <p class="font-mono text-[11px] text-cyber-light mt-0.5">University of Córdoba · Córdoba, Spain</p>
-          </div>
-          <span class="font-mono text-[10px] text-on-surface">2015 — 2017</span>
-        </div>
-      </div>
-
-      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-3">
-        <div class="flex items-start justify-between gap-3 flex-wrap">
-          <div>
-            <p class="font-semibold text-sm">Degree in Agricultural Engineering</p>
-            <p class="font-mono text-[11px] text-cyber-light mt-0.5">University of Extremadura · Badajoz, Spain</p>
-          </div>
-          <span class="font-mono text-[10px] text-on-surface">2011 — 2015</span>
-        </div>
-      </div>
+      <p class="text-xs text-on-surface leading-relaxed">Master in Digital Transformation, University of Córdoba (2019)  ·  Master &amp; Degree in Agricultural Engineering, Universities of Córdoba and Extremadura (2011–2017)</p>
     </section>
 
     <!-- PROJECTS -->
-    <section class="flex flex-col gap-3 animate-in delay-3">
-      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Projects</h2>
-
-      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-2">
-        <div class="flex items-start justify-between gap-3 flex-wrap">
-          <p class="font-semibold text-sm">fnfanalytics</p>
-          <span class="font-mono text-[10px] text-on-surface">2020 — Current</span>
-        </div>
-        <p class="text-xs text-on-surface leading-relaxed">ERP that helps farmers be more efficient — record all crop work and analyze costs in an advanced way.</p>
-      </div>
-    </section>
-
-    <!-- MENTORSHIP -->
     <section class="flex flex-col gap-3 animate-in delay-4">
-      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Mentorship</h2>
-
-      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-2">
-        <div class="flex items-start justify-between gap-3 flex-wrap">
-          <p class="font-semibold text-sm">Python Teacher</p>
-          <span class="font-mono text-[10px] text-on-surface">2023 — Current</span>
-        </div>
-        <p class="text-xs text-on-surface leading-relaxed">Programming · Data Structures & Algorithms · Django · Data Analysis with Python.</p>
-      </div>
-
-      <div class="role-card rounded-sm px-4 py-4 flex flex-col gap-2">
-        <div class="flex items-start justify-between gap-3 flex-wrap">
-          <p class="font-semibold text-sm">DevOps Teacher</p>
-          <span class="font-mono text-[10px] text-on-surface">2024 — Current</span>
-        </div>
-        <p class="text-xs text-on-surface leading-relaxed">CI/CD · Automation.</p>
-      </div>
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Projects</h2>
+      <article class="role-card rounded-sm px-4 py-4 flex flex-col gap-2">
+        <div class="flex items-start justify-between gap-3 flex-wrap"><p class="font-semibold text-sm">Myrmex</p><span class="font-mono text-[10px] text-on-surface">2026 — Current</span></div>
+        <p class="text-xs text-on-surface leading-relaxed">Local orchestrator for parallel Claude Code agents: each runs in its own git worktree and tmux session, driven from one web page with on-device speech-to-text (Parakeet / faster-whisper). Backlog-driven briefs, agent-to-agent messaging and hermetic CI. ~1,200 commits.</p>
+      </article>
+      <p class="text-xs text-on-surface"><a class="underline" href="engineering.html">Engineering case studies →</a></p>
     </section>
 
-    <!-- AWARDS & CERTIFICATIONS -->
+    <!-- TEACHING & AWARDS -->
     <section class="flex flex-col gap-3 animate-in delay-5">
-      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Awards & Certifications</h2>
-
+      <h2 class="font-mono text-[10px] text-cyber-light uppercase tracking-widest mb-1">// Teaching & Awards</h2>
       <ul class="bullets text-xs text-on-surface leading-relaxed flex flex-col gap-2 px-4">
-        <li><strong class="text-on-bg"><a class="underline" href="https://www.uma.es/UMA-Empresa/noticias/el-copernicus-hackathon-malaga-pone-la-ciudad-en-el-mapa-del-ecosistema-de-copernicus-en-europa/" target="_blank" rel="noopener">Copernicus Hackathon Málaga</a> — 1st Prize (2020).</strong> Built an app using satellite imagery to predict and visualize mosquito and jellyfish outbreaks.</li>
-        <li><strong class="text-on-bg"><a class="underline" href="https://www.ceia3.es/es/noticias/premios/el-proyecto-de-empresa-food-and-farm-analytics-ganador-de-los-premios-emilio-botin-2020-promovido-por-ceia3-y-santander-universidades/" target="_blank" rel="noopener">Emilio Botín Award</a> (ceiA3 and Santander Universidades, A3BT! competition) — 1st Prize (2020).</strong> ERP that helps farmers be more efficient.</li>
+        <li><strong class="text-on-bg">Teacher (2023 – Present).</strong> AIOps and LLM agents, Python and algorithms, DevOps and CI/CD. <a class="underline" href="cursos.html">Courses</a></li>
+        <li><strong class="text-on-bg"><a class="underline" href="https://www.uma.es/UMA-Empresa/noticias/el-copernicus-hackathon-malaga-pone-la-ciudad-en-el-mapa-del-ecosistema-de-copernicus-en-europa/" target="_blank" rel="noopener">Copernicus Hackathon Málaga</a> — 1st Prize (2020).</strong> Satellite imagery to predict mosquito and jellyfish outbreaks.</li>
+        <li><strong class="text-on-bg"><a class="underline" href="https://www.ceia3.es/es/noticias/premios/el-proyecto-de-empresa-food-and-farm-analytics-ganador-de-los-premios-emilio-botin-2020-promovido-por-ceia3-y-santander-universidades/" target="_blank" rel="noopener">Emilio Botín Award</a> — 1st Prize (2020).</strong> Food &amp; Farm Analytics, ceiA3 and Santander Universidades.</li>
         <li><strong class="text-on-bg">Certified SAFe® 5 Agilist.</strong></li>
       </ul>
     </section>

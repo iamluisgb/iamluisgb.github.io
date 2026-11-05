@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-VEQm7u2ssS3vXs5A/tinyJud816uiYQyLNJkb7vIiY4='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloud.umami.is; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engineering · Luis González</title>
+  <meta name="description" content="Three systems explained: an operational knowledge graph with MCP, Bookreader and Autodispatcher. Problem, architecture, decisions and measured results.">
+  <link rel="canonical" href="https://luisgonzalezbernal.com/engineering.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <meta property="og:title" content="Engineering · Luis González">
+  <meta property="og:description" content="Problem, architecture, decisions and measured results for three systems.">
+  <meta property="og:image" content="https://luisgonzalezbernal.com/images/og.jpg">
+  <meta property="og:url" content="https://luisgonzalezbernal.com/engineering.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <script defer src="/u/s.js" data-website-id="08c1619b-4bb8-471b-9dc9-9b6cda88e8ae" data-host-url="https://cloud.umami.is" data-domains="luisgonzalezbernal.com"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || (!t && matchMedia('(prefers-color-scheme: light)').matches)) document.documentElement.classList.add('light');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #10141a; --surface: #1c2026; --surface-2: #262a31; --line: #2c333b; --line-2: #3b4550;
+      --ink: #dfe2eb; --soft: #9fb0a6; --electric: #00ff9d; --electric-ink: #0b0f14; --cyber: #97cbff;
+      --warn: #f2b84b; --bad: #ff6b6b; --dot: rgba(53, 57, 64, .35);
+      --iso-t: #3a414b; --iso-l: #2a3038; --iso-r: #20252c; --iso-borde: #4a5562;
+      --mono: 'JetBrains Mono', ui-monospace, monospace; --sans: 'Inter', system-ui, sans-serif; --display: 'Space Grotesk', 'Inter', sans-serif;
+    }
+    :root.light {
+      --bg: #f5f5f7; --surface: #ffffff; --surface-2: #eeeef1; --line: #dcdce2; --line-2: #c5c5cd;
+      --ink: #1a1d24; --soft: #55606e; --electric: #00a866; --electric-ink: #ffffff; --cyber: #1e5080;
+      --warn: #b7791f; --bad: #c53030; --dot: rgba(0, 0, 0, .06);
+      --iso-t: #ffffff; --iso-l: #e6e6ec; --iso-r: #d2d2da; --iso-borde: #b9b9c4;
+    }
+    
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.6; background-image: radial-gradient(var(--dot) 1px, transparent 1px); background-size: 24px 24px; }
+    a { color: inherit; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+    .top { border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 90%, transparent); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(12px); }
+    .top .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; gap: 20px; }
+    .marca { font-family: var(--display); font-weight: 600; text-decoration: none; } .marca i { font-style: normal; color: var(--electric); }
+    .top nav { display: flex; gap: 18px; font-family: var(--mono); font-size: 12px; } .top nav a { color: var(--soft); text-decoration: none; } .top nav a:hover { color: var(--electric); }
+    .label { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); } .label b { color: var(--electric); font-weight: 500; }
+    h1 { font-family: var(--display); font-size: clamp(2.1rem, 5vw, 3rem); line-height: 1.08; letter-spacing: -.025em; margin: 14px 0; }
+    .lead { color: var(--soft); font-size: 1.08rem; margin: 0; max-width: 62ch; }
+    header.intro { padding: 56px 0 8px; }
+    .indice { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; } .indice a { font-family: var(--mono); font-size: 12px; text-decoration: none; border: 1px solid var(--line-2); border-radius: 4px; padding: 7px 11px; } .indice a:hover { border-color: var(--electric); }
+    article { padding: 56px 0 8px; scroll-margin-top: 60px; } article + article { border-top: 1px solid var(--line); margin-top: 48px; }
+    h2 { font-family: var(--display); font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.12; letter-spacing: -.02em; margin: 10px 0 8px; font-weight: 600; }
+    h3 { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--electric); margin: 30px 0 10px; }
+    article p { margin: 0 0 12px; } article p a, article li a, .nota a { color: var(--electric); }
+    .dec { margin: 0; padding-left: 20px; display: grid; gap: 9px; } .dec b { font-weight: 600; }
+    .flow { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: grid; gap: 6px; }
+    .capa { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 12px; align-items: center; }
+    .capa-l { font-family: var(--mono); font-size: 11px; color: var(--soft); }
+    .capa-n { display: flex; flex-wrap: wrap; gap: 6px; }
+    .n { flex: 1 1 110px; background: var(--surface-2); border: 1px solid var(--line-2); border-radius: 6px; padding: 8px 10px; font-size: 13px; line-height: 1.3; } .n b { display: block; font-weight: 600; } .n span { display: block; margin-top: 2px; font-size: 12px; color: var(--soft); }
+    .arr { margin-left: 132px; text-align: center; color: var(--soft); font-family: var(--mono); font-size: 13px; line-height: 1; }
+    .res { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+    .res div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; } .res b { display: block; font-family: var(--display); font-size: 1.5rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.1; } .res span { display: block; margin-top: 5px; font-size: 13px; color: var(--soft); }
+    .nota { color: var(--soft); font-size: 14px; margin-top: 14px; }
+    footer { margin-top: 64px; border-top: 1px solid var(--line); padding: 26px 0 40px; font-family: var(--mono); font-size: 12px; color: var(--soft); } footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; } footer a { text-decoration: none; } footer a:hover { color: var(--electric); }
+    a:focus-visible { outline: 2px solid var(--electric); outline-offset: 3px; }
+    @media (max-width: 560px) { .capa { grid-template-columns: 1fr; gap: 4px; } .arr { margin-left: 0; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+<div class="top"><div class="wrap"><a class="marca" href="./">Luis González<i>.</i></a><nav aria-label="Pages"><a href="./">Home</a><a href="cv.html">CV</a><a href="https://github.com/iamluisgb" target="_blank" rel="noopener">GitHub</a></nav></div></div>
+<main class="wrap">
+  <header class="intro">
+    <span class="label"><b>//</b> Engineering</span>
+    <h1>How three of my systems are built</h1>
+    <p class="lead">For each one: the problem, the architecture, the decisions and what it achieved. Details of my employer's client systems are generalised on purpose. I can go deeper in a conversation, within what confidentiality allows.</p>
+    <div class="indice"><a href="#graph">Knowledge graph and MCP</a><a href="#bookreader">Bookreader</a><a href="#autodispatcher">Autodispatcher</a></div>
+  </header>
+
+  <article id="graph">
+    <span class="label"><b>01</b> · Current role, global pharma company</span>
+    <h2>An operational knowledge graph for engineers and AI agents</h2>
+    <h3>Problem</h3>
+    <p>What an operations engineer needs to know is spread across observability, ITSM, CMDB, on-call and documentation tools. Agents have the same problem, and an answer nobody can trace is not useful during an incident.</p>
+    <h3>Architecture</h3>
+    <figure class="flow" role="img" aria-label="Agents and engineers query an MCP server or web UI, with audit and access control, which resolve through an ontology against live systems of record"><div class="capa"><span class="capa-l">Clients</span><div class="capa-n"><div class="n"><b>AI agents</b><span>90% of queries</span></div><div class="n"><b>Engineers</b><span>web UI</span></div></div></div><div class="arr" aria-hidden="true">↓</div><div class="capa"><span class="capa-l">Access</span><div class="capa-n"><div class="n"><b>MCP server</b></div><div class="n"><b>Web UI</b></div><div class="n"><b>Per-user audit, RBAC</b><span>on every path</span></div></div></div><div class="arr" aria-hidden="true">↓</div><div class="capa"><span class="capa-l">Core</span><div class="capa-n"><div class="n"><b>Ontology and resolver</b><span>entities and typed relations; stores no data</span></div></div></div><div class="arr" aria-hidden="true">↓</div><div class="capa"><span class="capa-l">Systems of record</span><div class="capa-n"><div class="n"><b>Observability</b></div><div class="n"><b>ITSM</b></div><div class="n"><b>CMDB</b></div><div class="n"><b>On-call</b></div><div class="n"><b>Docs</b></div></div></div></figure>
+    <h3>Decisions</h3>
+    <ul class="dec">
+      <li><b>Store no data.</b> Every query resolves live from the systems of record, so there is no second copy to keep fresh or to secure.</li>
+      <li><b>Treat agents as first-class clients.</b> The graph is exposed through an MCP server as well as a web UI. Most queries now arrive through agents.</li>
+      <li><b>Make every answer auditable.</b> Access is role-based and audited per user.</li>
+      <li><b>Gate autonomy with evaluation.</b> Datasets built from human-verified incidents (gold, silver, bronze) and weekly LLM-as-judge runs back the autonomy levels that define what an agent may do unsupervised. The incident agent moved from L1 (suggest) to L2 (act under guardrails) under that system.</li>
+    </ul>
+    <h3>Result</h3>
+    <div class="res"><div><b>5,000+</b><span>queries from 9 engineers</span></div><div><b>90%</b><span>through AI agents</span></div><div><b>88%</b><span>answered with data</span></div><div><b>0.6 s</b><span>p50 latency</span></div></div>
+  </article>
+
+  <article id="bookreader">
+    <span class="label"><b>02</b> · My own product, public repo</span>
+    <h2>Bookreader: an AI reading agent that lives in the browser</h2>
+    <h3>Problem</h3>
+    <p>A reader that can answer questions about your books normally needs your books on someone's server. I wanted the agent to work with the library staying on the device, and to add server pieces only where a feature could not exist without them.</p>
+    <h3>Architecture</h3>
+    <figure class="flow" role="img" aria-label="A browser PWA holds the reader, agent and local data; Cloudflare Workers handle the LLM gateway, encrypted sharing and sync; external agents read through a local MCP server"><div class="capa"><span class="capa-l">Browser (PWA)</span><div class="capa-n"><div class="n"><b>Reader</b><span>epub.js, pdf.js</span></div><div class="n"><b>AI agent</b><span>reads the book against a goal</span></div><div class="n"><b>Local data</b><span>IndexedDB, localStorage</span></div></div></div><div class="arr" aria-hidden="true">↓</div><div class="capa"><span class="capa-l">Cloudflare Workers</span><div class="capa-n"><div class="n"><b>Gateway</b><span>OpenAI-compatible proxy, own tokens</span></div><div class="n"><b>Share</b><span>ciphertext only, on R2</span></div><div class="n"><b>Sync</b><span>encrypted in the browser</span></div></div></div><div class="arr" aria-hidden="true">↓</div><div class="capa"><span class="capa-l">Outside</span><div class="capa-n"><div class="n"><b>LLM provider</b><span>behind the gateway</span></div><div class="n"><b>External agents</b><span>local, read-only MCP server</span></div></div></div></figure>
+    <h3>Decisions</h3>
+    <ul class="dec">
+      <li><b>Encrypt sharing end to end.</b> A shared link is encrypted in the sender's browser with AES-GCM 256. The key travels in the URL fragment, which browsers never send, so the server holds bytes it cannot read (ADR-053).</li>
+      <li><b>Validate model plans in code.</b> The per-chapter plan the agent proposes is checked deterministically, with a proportional fallback (ADR-049).</li>
+      <li><b>Deterministic checks first, then a judge from another model family.</b> Whatever code can verify, code verifies. An LLM judge scores only what needs judgement, and it never comes from the family under test, to avoid self-preference bias (<a href="https://github.com/iamluisgb/bookreader/blob/main/docs/EVALS.md" target="_blank" rel="noopener">EVALS.md</a>).</li>
+      <li><b>Keep the MCP server local and read-only.</b> External agents can read your library through a stdio bridge on your machine. It is not a public API and changes nothing (<a href="https://github.com/iamluisgb/bookreader/blob/main/mcp/README.md" target="_blank" rel="noopener">MCP README</a>).</li>
+    </ul>
+    <h3>Result</h3>
+    <div class="res"><div><b>712</b><span>commits</span></div><div><b>61</b><span>architecture decisions on record</span></div><div><b>4</b><span>Cloudflare Workers in the repo</span></div></div>
+    <p class="nota">Try it at <a href="https://bookreader.raiatech.com" target="_blank" rel="noopener">bookreader.raiatech.com</a>, or read the <a href="https://github.com/iamluisgb/bookreader/blob/main/DECISIONS.md" target="_blank" rel="noopener">decision log</a> (in Spanish).</p>
+  </article>
+
+  <article id="autodispatcher">
+    <span class="label"><b>03</b> · Previous role, global pharma company</span>
+    <h2>Autodispatcher: assigning incidents with a neural network</h2>
+    <h3>Problem</h3>
+    <p>Incidents took a mean of 45 minutes just to reach the right engineer, before anyone started working on them.</p>
+    <h3>Architecture</h3>
+    <figure class="flow" role="img" aria-label="An incident from ServiceNow goes to a Django and Celery app, a neural network classifies it, and it is assigned automatically"><div class="capa"><span class="capa-l">Input</span><div class="capa-n"><div class="n"><b>Incident</b><span>ServiceNow</span></div></div></div><div class="arr" aria-hidden="true">↓</div><div class="capa"><span class="capa-l">App</span><div class="capa-n"><div class="n"><b>Django and Celery</b><span>Docker, Nginx</span></div></div></div><div class="arr" aria-hidden="true">↓</div><div class="capa"><span class="capa-l">Model</span><div class="capa-n"><div class="n"><b>Neural network classifier</b><span>trained on 18 months of assignments</span></div></div></div><div class="arr" aria-hidden="true">↓</div><div class="capa"><span class="capa-l">Output</span><div class="capa-n"><div class="n"><b>Assigned to the right engineer</b><span>automatically</span></div></div></div></figure>
+    <h3>Decisions</h3>
+    <ul class="dec">
+      <li><b>Start from the data.</b> I analysed 18 months of historical ticket assignments before building the classifier.</li>
+      <li><b>Assign, do not just suggest.</b> The app assigns the incident to the right engineer itself, because the delay was in the assignment step.</li>
+    </ul>
+    <h3>Result</h3>
+    <div class="res"><div><b>45 → &lt;5 min</b><span>mean time to assign</span></div><div><b>−90%</b><span>assignment time</span></div></div>
+  </article>
+</main>
+<footer><div class="wrap"><a href="./">Home</a><a href="cv.html">CV</a><a href="mailto:luisgonzalezb93@gmail.com?subject=Engineering%20role">luisgonzalezb93@gmail.com</a><a href="https://www.linkedin.com/in/iamluisgb/" target="_blank" rel="noopener">LinkedIn</a></div></footer>
+</body>
+</html>
