@@ -8,7 +8,7 @@
       'hero.cta': 'Get in touch', 'hero.cta2': 'See projects',
       'sim.titulo': 'Simulation · production', 'sim.presupuesto': 'error budget', 'sim.latencia': 'p95 latency', 'sim.ia': 'AI · diagnosis',
       'p1': 'availability on a platform running ~3,000 automated jobs a day', 'p2': 'time to assign incidents, with a machine learning classifier',
-      'p3n': '3 awards', 'p3': 'in 2020: Emilio Botín, Copernicus Hackathon and A3BT', 'p4n': 'since 2023', 'p4': 'teaching Python, data analysis and DevOps',
+      'p3n': '2 awards', 'p3': 'in 2020: <a href="https://www.ceia3.es/es/noticias/premios/el-proyecto-de-empresa-food-and-farm-analytics-ganador-de-los-premios-emilio-botin-2020-promovido-por-ceia3-y-santander-universidades/" target="_blank" rel="noopener">Emilio Botín ↗</a> and <a href="https://www.uma.es/UMA-Empresa/noticias/el-copernicus-hackathon-malaga-pone-la-ciudad-en-el-mapa-del-ecosistema-de-copernicus-en-europa/" target="_blank" rel="noopener">Copernicus Hackathon Málaga ↗</a>', 'p4n': 'since 2023', 'p4': 'teaching Python, data analysis and DevOps',
       'proy.h2': 'AI products, in production', 'proy.p': 'I build them end to end: the product, the infrastructure and the AI.',
       'fnf.tag': 'Agri · Emilio Botín Award 2020', 'fnf.p': 'Farmers dictate what they did and AI turns it into an operation checked against the official registry, with its cost per plot.',
       'rep.tag': 'Agent pipeline · AI-generated', 'rep.p': 'A pipeline that researches, writes and checks its sources. One report a day since May. The text is written by AI.',
@@ -72,7 +72,7 @@
     es.forEach(function (e) {
       if (!e.isIntersecting) return; cuenta.unobserve(e.target);
       var en = document.documentElement.lang === 'en', el = e.target, fin = parseFloat(el.dataset.count), dec = +(el.dataset.dec || 0), suf = el.dataset.suf || '', txt = el.textContent, t0 = performance.now();
-      if (!suf) return;   // las que llevan texto («3 premios») se quedan como están
+      if (!suf) return;   // las que llevan texto («2 premios») se quedan como están
       (function paso(t) {
         var k = Math.min(1, (t - t0) / 1100), v = fin * (1 - Math.pow(1 - k, 3));
         el.textContent = (v < 0 ? '−' : '') + Math.abs(v).toFixed(dec).replace('.', en ? '.' : ',') + (en ? suf.trim() : suf);
