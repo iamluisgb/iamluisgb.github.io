@@ -22,7 +22,7 @@
       "eng.1": "Grafo de conocimiento operativo",
       "eng.1p": "Una ontología sobre sistemas de operaciones en vivo, abierta a agentes de IA por MCP. No almacena datos.",
       "eng.1r": "5.000+ consultas · p50 0,6 s",
-      "eng.2p": "Un agente de lectura que corre en el navegador, con compartir cifrado de extremo a extremo, un servidor MCP de solo lectura y evaluaciones propias.",
+      "eng.2p": "Un agente de lectura que corre en el navegador, con compartir cifrado de extremo a extremo, servidores MCP y evaluaciones propias.",
       "eng.2r": "61 decisiones de arquitectura documentadas",
       "eng.3p": "Una red neuronal, entrenada con 18 meses de tickets, que asigna cada incidente al técnico adecuado.",
       "eng.3r": "de 45 min a menos de 5 min",
