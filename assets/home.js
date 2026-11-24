@@ -56,6 +56,9 @@
       "p3n": "2 premios",
       "p4": "enseñando Python, análisis de datos y DevOps",
       "p4n": "desde 2023",
+      "lec.h2": "Lo que estoy leyendo",
+      "lec.p": "Mi estantería de agentes de IA, en directo desde <a href=\"https://bookreader.raiatech.com/\" target=\"_blank\" rel=\"noopener\" data-umami-event=\"web-bookreader-estante\">Bookreader</a>, el lector que desarrollo.",
+      "lec.tag": "Lectura",
       "prof.h2": "Enseño lo que uso cada día",
       "prof.p": "Python desde 2023, DevOps desde 2024 y ahora AIOps y agentes LLM. Cada curso tiene su repositorio abierto.",
       "prof.tag": "Profesor",
@@ -101,8 +104,20 @@
     document.getElementById('i-sol').style.display = claro ? 'none' : 'block';
     document.getElementById('i-luna').style.display = claro ? 'block' : 'none';
   }
+  // Estantería de Bookreader incrustada: se carga con el tema de la web, sigue sus cambios de tema
+  // y toma el alto que le dice la propia estantería (solo se aceptan mensajes de Bookreader).
+  var BR = 'https://bookreader.raiatech.com', estante = document.getElementById('estante');
+  function temaWeb() { return document.documentElement.classList.contains('light') ? 'light' : 'dark'; }
+  if (estante) {
+    estante.src = estante.getAttribute('data-src') + '&theme=' + temaWeb();
+    window.addEventListener('message', function (e) {
+      if (e.origin !== BR || !e.data || e.data.type !== 'bookreader-height') return;
+      var h = Math.round(+e.data.height); if (h > 200 && h < 2000) estante.style.height = h + 'px';
+    });
+  }
   document.getElementById('theme').addEventListener('click', function () {
     var claro = document.documentElement.classList.toggle('light'); guarda('theme', claro ? 'light' : 'dark'); iconos();
+    if (estante && estante.contentWindow) estante.contentWindow.postMessage({ type: 'bookreader-theme', theme: temaWeb() }, BR);
   });
   iconos();
 
